@@ -79,6 +79,7 @@ class SheetWeapon:
     barrels: list[str]
     magazines: list[str]
     perks: list[str]
+    origin_traits: list[str]
 
     @property
     def components(self) -> list[str]:
@@ -214,6 +215,11 @@ def read_sheet_weapons() -> list[SheetWeapon]:
                         split_lines(get(row, "Perk 1"))
                         + split_lines(get(row, "Perk 2"))
                     ),
+                    origin_traits=[
+                        trait
+                        for trait in split_lines(get(row, "Origin Trait"))
+                        if normalize(trait) not in ("", "none", "n/a")
+                    ],
                 )
             )
     return weapons
@@ -347,6 +353,13 @@ def resolve_weapon(weapon, items, items_by_name, plug_sets):
                 if len(hashes) != 1:
                     ambiguous_components[component] = hashes
 
+        for origin in weapon.origin_traits:
+            if origin in resolved:
+                continue
+            hashes, sockets = resolve_component(origin, socket_maps)
+            if hashes:
+                resolved[origin] = {"hashes": hashes, "sockets": sockets}
+
         candidate_results.append(
             {
                 "hash": candidate["hash"],
@@ -398,6 +411,7 @@ def resolve_weapon(weapon, items, items_by_name, plug_sets):
         "barrels": weapon.barrels,
         "magazines": weapon.magazines,
         "perks": weapon.perks,
+        "origin_traits": weapon.origin_traits,
         "candidate_count": len(candidate_results),
         "complete_candidate_count": len(complete),
         "selected_candidates": selected_candidates,
@@ -457,16 +471,21 @@ def expand_named_perk_subset(perk_names, resolved):
     return itertools.product(*hash_groups)
 
 
-def roll_variants(barrel_hashes, magazine_hashes):
+def roll_variants(barrel_hashes, magazine_hashes, origin_hashes=()):
+    groups = [
+        [None] + list(barrel_hashes),
+        [None] + list(magazine_hashes),
+        [None] + list(origin_hashes),
+    ]
+    seen = set()
     variants = []
-    variants.extend(
-        [barrel_hash, magazine_hash]
-        for barrel_hash in barrel_hashes
-        for magazine_hash in magazine_hashes
-    )
-    variants.extend([barrel_hash] for barrel_hash in barrel_hashes)
-    variants.extend([magazine_hash] for magazine_hash in magazine_hashes)
-    variants.append([])
+    for combo in itertools.product(*groups):
+        chosen = [choice for choice in combo if choice is not None]
+        key = tuple(chosen)
+        if key not in seen:
+            seen.add(key)
+            variants.append(chosen)
+    variants.sort(key=lambda variant: -len(variant))
     return variants
 
 
@@ -492,6 +511,9 @@ def generate_candidate_block(result, candidate):
         name for name in result["magazines"] if name in resolved
     ]
     supported_perks = [name for name in result["perks"] if name in resolved]
+    supported_origins = [
+        name for name in result.get("origin_traits", []) if name in resolved
+    ]
 
     lines = [
         f"// {result['tab']}: {result['name']}"
@@ -511,10 +533,17 @@ def generate_candidate_block(result, candidate):
         )
     if supported_perks:
         lines.append(f"// perks: {component_summary(supported_perks, resolved)}")
+    if supported_origins:
+        lines.append(
+            f"// origin traits: {component_summary(supported_origins, resolved)}"
+        )
 
     unsupported = [
         component
-        for component in result["barrels"] + result["magazines"] + result["perks"]
+        for component in result["barrels"]
+        + result["magazines"]
+        + result["perks"]
+        + result.get("origin_traits", [])
         if component not in resolved
     ]
     if unsupported:
@@ -549,7 +578,8 @@ def generate_candidate_block(result, candidate):
 
     barrel_hashes = hash_options(supported_barrels, resolved)
     magazine_hashes = hash_options(supported_magazines, resolved)
-    variants = roll_variants(barrel_hashes, magazine_hashes)
+    origin_hashes = hash_options(supported_origins, resolved)
+    variants = roll_variants(barrel_hashes, magazine_hashes, origin_hashes)
 
     for perk_count in range(len(supported_perks), 0, -1):
         for perk_names in itertools.combinations(supported_perks, perk_count):

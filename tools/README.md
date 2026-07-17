@@ -75,6 +75,10 @@ any `resolve_*` script without `--generate` to only print a coverage report.
   via their intrinsic. Resolution edge cases are printed as warnings.
 - Entries cover every non-empty perk subset (a weapon can roll multiple perks in
   the same column, so same-column combinations are included).
+- Origin Traits (PvE only, when the sheet lists one) are added as an optional
+  prefix component alongside barrel/mag: each roll is generated with and without
+  the origin trait, and once per resolved origin-trait hash when a name maps to
+  several manifest copies. This roughly doubles the PvE entry count.
 - `//notes:` block notes reset on any blank line or `//` comment, so each
   weapon's rolls are kept contiguous directly under its note.
 
