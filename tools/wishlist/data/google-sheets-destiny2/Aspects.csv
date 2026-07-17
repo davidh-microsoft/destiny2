@@ -1,0 +1,118 @@
+INFO,,,,,,ANALYSIS,,
+🖼️,Name,Subclass,Class,Fragments,Effect,Description,Rank,Tier
+,Feed the Void,Void,W,2,"Ability kills grant Devour
+Devour gives 140 HP on activation, lasts 10-15s, and gives 15-40% grenade and 5-8s duration on kill","only remaining unnerfed Devour source left, also great grenade regen built-in",1,S
+,Tempest Strike,Arc,H,2,"Bolt Charge on jolted enemy kill
+22m jolting uppercut on slide melee, 75% DR for 4s after usage",insanely OP DR with Combination Blow,2,S
+,Crackshot,Solar,H,2,,,,
+,Soul Siphon,Void,W,3,,,,
+,Shieldburst,Solar,T,3,,,,
+,Controlled Demolition,Void,T,2,"Void ability damage and volatile explosions apply volatile
+Volatile explosions restore 90 HP to allies within 40m of user",probably the strongest sustained chunk healing in the game,3,S
+,Winter's Shroud,Stasis,H,2,"60 slow stacks to enemies within 9m for 8-12s on dodge
++300% class regen for 3s on slow
+50% DR for 4s on dodge",essentially permanent 50% DR and free Courage application on a non-boss scale,4,S
+,Banner of War,Strand,T,2,"4 stack buff (sword, melee, glaive melee, finisher, super light)
++100% melee, 40% Bladefury, 10% sword damage (20% self)
+15s base, 24s max, 2.5-1s healing pulse rate based on stacks","only aspect that gives stackable weapon boost, also good sustain and melee damage",5,S
+,Ascension,Arc,H,3(2),Airborne air move consumes class ability (triggers effects) and amplifies allies and jolts enemies within 10m,100% teamwide Amplified uptime while triggering class ability effects,6,S
+,Sol Invictus,Solar,T,2,"Solar ability kills, scorched kills, and Hammer of Sol impacts make refreshable Sunspots for 12s
+Restoration x1 for 5-7.5s, 100% grenade/melee regen inside","constant Restoration access, chainable staggering ticks on adds, passive ability regen",7,S
+,Knockout,Arc,T,2,"50-100 HP, regen start, and Amplified on melee kill
++160% melee damage, unpowered conversion, 6m lunge for 6s on shield break or sub 30% target damage","free Amplified and chunk healing on melee kills, universal melee damage boost",8,S
+,Weavewalk,Strand,W,2,"Air move toggles Weavewalk while airborne, giving 90% DR, perched Threadling every 0.5s, costs 25% melee per second, and disables weapons, abilities, etc., Woven Mail to allies on exit (2-20s)",excellent response strategy for survivability in low power content,9,A
+,Consecration,Solar,T,3(2),"Sliding powered melee creates igniting slam on recast
+25% non-melee DR during animation",has strong intangibles but doesn't have any outstanding special effects,10,A
+,Stylish Executioner,Void,H,2,"Debuffed kills give invisibility (8-11.2s) and truesight (4s), with invisibility going on cooldown for 2s after wearing off
+Melees deal +300% damage, weaken for 5s, have more range","invisibility not as high value any more, melee damage bonus is situational",11,A
+,Threaded Specter,Strand,H,3,"Spawns strand decoy on dodge that attracts attacks, lasts 12s, and explodes and spawns 2 Threadlings on destruction
+0.6x class regen while equipped","high uptime and deaggro source, very easy to use",12,A
+,On Your Mark,Solar,H,3,"10 stack buff in 15m for 12s (crit kill/HC crit: 2, dodge: 1, crit: 1)
+15-45? reload, 5-50 Weapons, 0.95x-0.85x? reload duration
+Cure on kill at 10 stacks","high utility for fireteam damage, provides pseudo-Devour effect",13,A
+,Gunpowder Gamble,Solar,H,2(3),"6 stack explosive with 6s ICD that replaces grenade (weapon: 1, ignition/scorch: 3, ability: 4, super: 6)
+Bigger ignition + submunitions if shot, otherwise detonates 3s after throw",splash damage outlier even though doesn't provide much consistency,14,A
+,Storm's Keep,Arc,T,2,"Bolt Charge x4 to allies on class ability cast (x6 for thruster)
+Barricade gives Bolt Charge (no Frequency doubling) over time and allows for weapon discharge at max stacks","free fireteam damage, but very one-dimensional use case",15,A
+,Into the Fray,Strand,T,2,"3 pulses that give Woven Mail and 15 HP on Tangle destruction
+Woven Mail to allies on super cast
++300% melee regen during Woven Mail","solid survivability with 10s Woven Mail source, great uptime from melee regen",16,A
+,Lethal Current,Arc,H,2,"Melee hits on jolted enemies apply blind
+Jolting 7m range aftershock melees, double damage light attack on Arc Staff after dodge","Blind application generally not relevant, aftershock damage just okay",17,A
+,Lightning Surge,Arc,W,2,"Sliding jolting powered melee that grants hit-based Bolt Charge and Amplified, gives %DR for ?s on usage","straightforward splash melee aspect, more risky and less consistent vs. Consecration",18,B
+,Roaring Flames,Solar,T,2,"3 stack buff for 20s (ability kills and ignitions)
+20-73% non-melee ability damage (67-200% melee)
+Unpowered conversion and 30-40 scorch on melee",strong ability damage buff and forgiving timer but not very versatile,19,B
+,Touch of Flame,Solar,W,2,"Firebolt gets 50% radius and 5 enemies, solar gets 2s duration and magma blobs, fusion gets 2 explosions, and healing gets Cure x2 and Restoration x2 for 4-6s","like Touch of Thunder, damage/Restoration x2 specialist but not as applicable",20,B
+,Touch of Thunder,Arc,T,2,"Flashbang blinds after first bounce, lightning has 2 charges and jolts on every tick past 1st, pulses make Ionic Traces every 1s and ramp damage, storms roam after detonation","meta for grenade damage, but zero survivability or utility outside buffing grenades",21,B
+,Mindspun Invocation,Strand,W,2,"Grapple melee makes 3 Threadlings, Threadling consume makes 5 perched Threadlings, shackle consume gives Weaver's Trance for 25s (suspending explosion on kills)","best combination of suspend CC with offense, technically best Threadling spam",22,B
+,Iceflare Bolts,Stasis,W,2,"Freezing 12m seeker on enemy shatter
+8s ICD after 7 seekers","insane chain CC spread, not very offensive but great ability efficiency, build-dependent",23,B
+,Whirling Maelstrom,Strand,H,2,"Spawns tracking vortex upon Tangle destruction
+Vortex unravels targets on kill, triggering Tangle effects
+Can be grappled to","pretty solid splash with lingering stagger effects, also QoL with grapple point",24,B
+,Hellion,Solar,W,2,"Class ability spawns solar turret for 20s
+3 shot ignition with Ashes, 4 without (no grenade scaling)",high uptime stagger source that takes low CD ability instead of grenade/melee,25,B
+,Bleak Watcher,Stasis,W,2,"Grenade cooldown changed to glacier
+Charged grenade deploys stasis turret
+Turret applies 20 slow on hit and lasts 25-30s","reliable CC option, helps ""soften"" targets in the way Hellion does",26,B
+,Weaver's Call,Strand,W,2,"3 Threadlings and perched deployment on class ability cast
+Damage/kill counter that adds perched Threadlings with 2s ICD
+10% class energy on Threadling hit","passive damage and class regen, very background",27,B
+,Flechette Storm,Strand,T,2,"Sliding powered melee knocks enemies away, consumes 50% per cast, and launches barrages of unraveling projectiles
+25% DR against non-melee during animation",ranged but definitely lacking in power compared to other powered melee aspects,28,B
+,Ionic Sentry,Arc,W,2,"6 stack 15s turret with 6s ICD that replaces grenade (weapon: 1, ability: 2), blinding on impact and chaining lightning at enemies within 16m, granting Bolt Charge stacks on hit",like Bleak Watcher but does damage and synergizes with Arc sandbox,29,B
+,Diamond Lance,Stasis,T,3,"Spawns 7s ICD lance on stasis or ability kill
+Lance can be thrown or slammed, freezing and giving x2 Frost Armor to allies on impact (slam only)","gameplay loop is too slow and non-lethal, but decent Frost Armor source",30,B
+,Unbreakable,Void,T,2,"Charged grenade makes blinding void shield for 3s with 95% DR, releases response damage upon depletion, makes orbs every 4.5s every 10 damage taken on Sentinel Shield","best get-out-of-jail card in the game, but tied to long CD",31,B
+,Vanishing Step,Void,H,2,Dodge animation travels further and gives invisibility for 5-7s,shorter invisibility CD vs. Trapper's with better synergies,32,B
+,Ensnaring Slam,Strand,H,2,"Suspending dive air move, triggers class ability usage effects
+Woven Mail for 4s for each suspended enemy, up to 20s","very consistent Woven Mail source, suspend not as relevant in current sandbox",33,C
+,Tectonic Harvest,Stasis,T,2,"Small Stasis Shard on crystal or enemy shatter
+x1-3 Frost Armor and 10-? HP from shard pickup","best of the harvest aspects, but still forces shard gameplay loop",34,C
+,Arc Soul,Arc,W,2,"Rifts grant allies Arc Souls
++40-120% class regen near allies (up to 3)
+Amplified boosts Arc Soul fire rate by 2.25x",overshadowed by Getaway Artist and damage benefit isn't substantial in full teams,35,C
+,Bastion,Void,T,2,"45 HP Void Overshield to allies on super cast or barricade cast
+Barricades regen 11 Void Overshield HP/s","best teamwide Void Overshield applicator, but tied to long CD",36,C
+,Knock 'em Down,Solar,H,2,"Powered melee kills refund if Radiant
+Marksman Golden Gun is 4s longer, Deadshot Golden Gun gets 15% DR, Blade Barrage gains 3 knives per fan",refunds a variety of melees that aren't very potent,37,C
+,Electrostatic Mind,Arc,W,2,"Ionic Trace on Arc ability and Arc debuffed kills
+Ionic Traces grant Amplified",good elemental pickup but doesn't affect endgame outside spammability,38,C
+,Widow's Silk,Strand,H,2,"Grants additional grenade charge
+Grapples make grapple points that grant allies grapple ability",consistency pick for Cyrt synergy and grapple point creation,39,C
+,Grim Harvest,Stasis,H,3,"Stasis debuffed kills spawn Stasis Shard (size based on rank)
+x1-3 Frost Armor and 10-? HP from shard pickup","core shard spam aspect, but shard gameplay loop isn't very endgame-appealing",40,C
+,Howl of the Storm,Stasis,T,2,"Additional melee charge
+Sliding powered melee creates 8 crystal wave uppercut","much worse individually vs. better powered melee aspects, needs Tectonic pairing",41,C
+,Chaos Accelerant,Void,W,2,"Overcharge grenades: axions: +2 seekers and 25% damage, scatter: +4 projectiles, tracking, 25% damage, vortex: 7.5% duration, 70% radius, enhanced pull, others: creates volatile HHSN blast",overcharge tradeoff + lack of class-leading options for damage and other purposes,42,C
+,Trapper's Ambush,Void,H,2,"Grants a weakening invisibility dive that uses melee charge
+Dive leaves smoke cloud that weakens and damages
+Snare bomb gives invisibility to allies for 5-7s",not really relevant any more outside of pure stealth scenarios,43,C
+,Child of the Old Gods,Void,W,2,"Deployable weakening Void Soul for 25s on rift cast
+Healing or empowering drain give 4% grenade/melee or 25 HP every 1.4s, and drained kills give 10-50% class",solid debuff extension but more fruitful ability regen options exist,44,C
+,Heat Rises,Solar,W,2,"Weapon and abilities can be used while gliding
+20-50% melee from airborne kills
+Cure x2 for allies on consumption, 5-15s duration on aerial kill","good for movement and QoL for in-air shooting, dated Restoration x2 source",45,C
+,Offensive Bulwark,Void,T,2,"2 throws in Sentinel Shield, unpowered conversion that gives 10 HP Void Overshield, +400% grenade regen, +160% melee damage, 5.5m lunge with Void Overshield active","consistency problems in low power content, effects comparable to better uptime aspects",46,C
+,Shatterdive,Stasis,H,2,"Grants 4s ICD vertical dive that shatters crystals and enemies
+Increased shatter damage
+Frost Armor on crystal or enemy shatter","QoL Frost Armor source, but still mostly just a movement option",47,C
+,Touch of Winter,Stasis,H,2,"Coldsnap seekers duplicate on freeze and spawn crystals on chain detonations, duskfield gets 50% radius and crystal inside, glacier becomes a heptagon","extremely one-dimensional aspect, effect is quite niche",48,C
+,On the Prowl,Void,H,3,"Entering invisibility marks a random non-boss target
+Killing target creates ally-cloaking weakening smoke cloud and gives reload and ability energy (3 stacks, 7s)","spree requirement too strict for endgame, walking to smoke clouds also potentially risky",49,C
+,Flow State,Arc,H,2,"Amplified on jolted enemy kill
++200% class regen, +50 reload, 0.8x reload duration, and 66% DR during dodge while Amplified",QoL effects but Amplified trigger and dodge DR not very applicable,50,C
+,Icarus Dash,Solar,W,2,"Grants horizontal dash with 4s ICD
+Two dashes with Heat Rises
+Cure x1 on standard 3 kill counter within 5s","QoL movement choice with physics immunity frames, consistency pick",51,C
+,Glacial Harvest,Stasis,W,2,"Stasis Shard near enemy on freeze (scales with enemy type)
+x1-3 Frost Armor and 10-? HP from shard pickup",least consistent harvest aspect,52,C
+,Drengr's Lash,Strand,T,2,Tracking 30m suspending lash on barricade cast,"suspend focus on long CD, also mediocre value without Abeyant",53,D
+,Juggernaut,Arc,T,2,"50 HP overshield (Amplified 33% DR, 60% splash DR, 10% general DR) that gives Bolt Charge per hit absorbed while sprinting with full class energy, fully depletes class on destruction",fairly tanky overshield but uptime too poor and sprint requirement annoying,54,D
+,The Wanderer,Strand,W,2,"Suspending blast on Tangle destruction
+Tangles are unaffected by Gravity and seek/attach to enemies
+Threadling kills spawn Tangles",tradeoffs against normal tangle (delayed detonation) and suspend on long CD,55,D
+,Frostpulse,Stasis,W,2,"8.5m freezing pulse and +2.5m lunge for 1.2s on rift cast
+11% class energy on freeze",basically just for PvP cheese,56,D
+,Cryoclasm,Stasis,T,3,2s ICD +50% distance slide and instant shatter on slide collision,basically just for PvP movement,57,D

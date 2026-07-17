@@ -1,0 +1,10 @@
+# Extracted SQLite manifest — regenerated on demand from manifest.content
+manifest/world.sqlite
+manifest/manifest.version.txt
+
+# Generated resolution reports (produced by the resolve_* scripts)
+wishlist/*resolution*.json
+
+# Python cache
+__pycache__/
+*.pyc

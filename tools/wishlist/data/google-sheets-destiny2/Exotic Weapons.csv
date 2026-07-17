@@ -1,0 +1,307 @@
+,INFO,,,,,,,,ANALYSIS,,,,,,KEY,
+#,🖼️,Name,Season,Ammo,Type,Tags,Stun,Description,Roam,DPS,Day 1,Chall,Speed,Tier,,
+111,,Ace of Spades,4,56,primary,add clear,,"50% Kill Clip for 6 shots
+Firefly",✖,✖,✖,✖,✖,F,✔,Optimal
+55,,Ager's Scepter,15,44,special,"add clear
+DPS",,"Freeze AoE on kill
+Kills refill 10 ammo
+Will Given Form super drain damage mode",▲,✖,✖,✖,!,D,▲,Viable
+11,,Alethonym,25,70,primary,utility,,"Fires stacking DoT missiles that embed
+Generates Vestiges on hit
+Special reload to give special at 50% or heavy at 100%",✖,!,!,▲,▲,C,!,Situational
+25,,Anarchy,5,0,power,"DPS
+add clear",,"6x 10s DoT arc traps
+Stacks 2x on a single target",✖,✖,!,✖,▲,D,✖,Wasted
+56,,Arbalest,6,34,special,utility,,"Anti-Barrier, one shots elemental shields
+Genesis, Disruption Break",✖,✖,✖,✖,✖,E,no ordering within tiers,
+26,,Bad Juju,7,80,primary,add clear,,"0.8-2% Super energy, 20-100% damage on kill for 7.5s
+Kills refill mag
+3 kills within 7.5s create explosion",✖,✖,✖,!,!,D,,
+12,,Barrow-Dyad,26,32,primary,"DPS
+add clear",,"Stored hits converted into high-damage seekers
+Reloads quickly while stowed
+Several selectable catalysts/traits",✖,✖,✖,✖,✖,E,,
+27,,Bastion,9,30,special,DPS,,"Unstoppable
+45% damage and 0.85x charge on melee for 8.5s
+One-Two Punch for 2.7s on majority of bolts hit",✖,!,✖,!,✖,D,,
+112,,Black Talon,4,60,power,add clear,,"Void projectiles on heavy
+10% extra damage per Void debuff",✖,✖,✖,✖,✖,F,,
+57,,Borealis,1,55,special,add clear,,"The Fundamentals
+~37% damage for 5 shots and mag refill on matched shield break",✖,✖,✖,✖,✖,F,,
+28,,Buried Bloodline,23,50,special,add clear,,"11 HP on hit, Devour on 4 minor or 1 major kill
+5s weaken on hit with Devour up",!,✖,✖,!,✖,D,,
+113,,Centrifuse,21,54,primary,add clear,,"Movement-based charged blinding explosions
+Passive charge",✖,✖,✖,✖,✖,F,,
+114,,Cerberus+1,4,59,primary,add clear,,"4 barrels
+50% damage and reduced spread for 7s on special kill-reload",✖,✖,✖,✖,✖,F,,
+1,,Choir of One,24,15,special,add clear,,"Hip fire ammo dump mode with high burst
+ADS mode with increased precision damage
+Modified Radiolaria Transposer",✔,✖,✔,✔,✔,A,,
+29,,Cloudstrike,12,70,special,DPS,,"Lightning storm and Bolt Charge on 3 precision hits or kill
+Triple Tap",✖,✖,✖,✖,!,D,,
+58,,Coldheart,1,60,special,add clear,,Charge-based Ionic Trace generation and damage scaling,✖,✖,✖,✖,✖,E,,
+59,,Collective Obligation,16,58,primary,add clear,,"Cycles debuffs on-hit and transfers them
+20% damage for 15s with Void Leech active
+Void buffs refill mag",!,✖,✖,✖,✖,E,,
+30,,Conditional Finality,20,51,special,"DPS
+utility",,Freeze + ignite on 10 pellets hit,!,✖,✖,✖,✖,D,,
+115,,Crimson,2,100,primary,add clear,,"Health and regen on kills
+Refill on precision kill",✖,✖,✖,!,✖,F,,
+60,,Cryosthesia 77K,14,50,primary,add clear,,"Freeze burst alt mode on kill
+Mag refill on frozen kill",✖,✖,✖,✖,✖,F,,
+,,Cull's Shadow,29,,special,,,,,,,,,,,
+61,,D.A.R.C.I.,1,60,power,DPS,,"Target analysis
+Jolt and ~55.5% crit damage after aiming for 0.5s
+15% damage after 5 hits near teammate, team buff",✖,▲,✖,✖,✖,D,,
+62,,Dead Man's Tale,22,55,primary,add clear,,"Up to 0.86x reload duration on precision hit
+28% damage at 5 stacks
+Reloads mag proportionally based on stacks",✖,✖,✖,✖,✖,F,,
+31,,Dead Messenger,22,70,special,add clear,,"The Fundamentals
+Wide triple shot wave frame
+Demolitionist",▲,✖,!,✖,✖,D,,
+63,,Deathbringer,8,36,power,"DPS
+add clear",,Falling tracking height-scaled projectiles,✖,!,✖,✖,✖,E,,
+64,,Delicate Tomb,18,55,special,add clear,,"Jolt, 2x damage, and partial refill on Ionic Trace pickup
+Kills have Ionic Trace spawn chance",✖,✖,✖,✖,✖,E,,
+65,,Deterministic Chaos,20,40,power,add clear,,"Volatile every 4th shot
+Weaken every 16th shot
+Anti-Barrier",✖,✖,✖,✖,✖,F,,
+66,,Devil's Ruin,9,64,primary,add clear,,"Unstoppable
+Charged burst on Firesprite pickup",✖,✖,✖,✖,✖,F,,
+32,,Divinity,8,50,special,utility,,"Overload
+15% debuff
+Crit creation, damage burst every 4s",✖,▲,✔,✖,!,C,,
+33,,Dragon's Breath,23,50,power,"DPS
+add clear",,"Embeds a continuously igniting projectile
+Auto-loads upon reaching 5 stacks (2 ignitions)",✖,✖,✖,✖,✖,E,,
+67,,Duality,12,70,special,DPS,,"Dual pellet/slug mode
+On Black Wings stacking damage perk",✖,✖,✖,✖,✖,E,,
+13,,Edge of Action,16,30,special,utility,,Mini bubble that provides 5% stackable buff,✖,!,✖,!,!,D,,
+68,,Edge of Concurrence,16,70,special,add clear,,Chain lightning seeker,✖,✖,✖,✖,✖,F,,
+69,,Edge of Intent,16,50,special,utility,,Healing turret,✖,✖,✖,✖,✖,F,,
+14,,Ergo Sum,24,15,special,utility,,"Special ammo sword with different exotic traits
+Increased damage and grenade regen while Transcendent
+Regens ammo on Prismatic grenade damage",✔,▲,▲,!,✔,B,,
+34,,Eriana's Vow,8,75,special,DPS,,"Anti-Barrier, ignition on matched/champ shield break
+First shot and subsequent crits do 32.5% damage
+Auto-Loading Holster",✖,✖,!,✖,!,D,,
+70,,Euphony,24,35,special,DPS,,"3 threadlings every 2 crit bursts
+Up to 50% damage at 25 threadling hits",✖,✖,✖,✖,✖,D,,
+71,,Ex Diris,22,70,special,"DPS
+add clear",,"Enrage-based fire rate buff
+Never reloads
+Amplified and overshield/blind moths on kill",✖,✖,✖,✖,✖,E,,
+72,,Eyes of Tomorrow,12,20,power,add clear,,50% damage boost and ammo refund on 4 kills,✖,✖,✖,✖,✖,E,,
+,,Fafnir,29,29,power,utility,,,,,,,,,,
+73,,Fighting Lion,1,40,primary,add clear,,"70 reload for 7s on damage dealt
+24.5% damage to shields, Volatile on hit
+Kills near Fighting Lion damage refill mag",✖,✖,✖,✖,✖,F,,
+35,,Final Warning,20,50,primary,"DPS
+add clear",,"Unraveling tracking projectile burst
+100% crit damage on ADS",!,✖,✖,✖,✖,E,,
+15,,Finality's Auger,26,39,power,DPS,,"Targetable turret creation on 3 ammo consumption
+Regular BnS LFR mode otherwise",!,▲,✔,✔,!,B,,
+74,,Forerunner,15,56,special,add clear,,Special grenade on kill-reload,✖,✖,✖,✖,✖,E,,
+6,,Gjallarhorn,15,50,power,"utility
+add clear",,"~26% damage to legendary rockets
+Homing rocket with secondary missile on kill",!,▲,▲,!,✔,B,,
+7,,Grand Overture,16,45,power,DPS,,Hit count-based volley of blinding missiles,✖,!,!,✖,✖,D,,
+16,,Graviton Lance,1,60,primary,add clear,,"Seeking void orbs on kill
+Turnabout, Vorpal Weapon",▲,✖,!,▲,✖,C,,
+17,,Graviton Spike,27,57,primary,add clear,,"3 crits or kills overcharge 3 shots of alternate mode
+Stasis spawns crystals, Arc has lightning
+Temporal Alignment: 20% damage on both overcharges",!,✖,✖,✖,✖,E,,
+116,,Hard Light,1,40,primary,add clear,,"The Fundamentals
+Buffed ricochet rounds",✖,✖,✖,✖,✖,F,,
+75,,Hawkmoon,12,52,primary,add clear,,Up to 1736% damage on final shot after 7 crits,✖,✖,✖,✖,✖,F,,
+76,,Heartshadow,17,0,power,"utility
+DPS",,"Invisibility and weaken on heavy attack
+25% damage boost for 2.5s after invisibility ends
+50%? movement speed while invisible",✖,✖,✖,✖,✖,E,,
+117,,Heir Apparent,10,50,power,add clear,,Spun-up arc shield,✖,✖,✖,✖,✖,F,,
+,,Heirloom,28,45,special,add clear,,"3 tier ADS time to charge explosive bolt
+Intrinsic Unstoppable
+Heat-based exhaust",✖,✖,✖,✖,✖,E,,
+36,,Hierarchy of Needs,19,47,primary,"DPS
+add clear",,"Guidance ring after 6 crits or 6 kills or 3 crit kills
+Buffs allied bows, up to 3 rings stack
+0.5x draw time and 100 reload after seeker hits",✖,!,✖,✖,✖,D,,
+18,,Ice Breaker,25,0,special,utility,,"Gets ammo on kills from other sources
+Explosion on kill, ignition on shatter or precision kill
+Stasis-debuffed hits give 1 ammo per 2 shots",!,✖,✖,✖,!,D,,
+37,,Izanagi's Burden,5,60,special,DPS,,7x damage Honed Edge shot,!,!,!,✖,!,D,,
+118,,Jötunn,5,26,special,add clear,,"Scorching tracking projectile
+Cornered, Incandescent",✖,✖,✖,✖,✖,F,,
+19,,Khvostov 7G-0X,24,54,primary,add clear,,"3.5x damage ricocheting bullets every 7 shots
+Orbs give 7 enhanced ricocheting rounds
+Shoot to Loot",!,✖,!,✖,✖,D,,
+38,,Le Monarque,5,56,primary,add clear,,"Overload
+Unrelenting
+Poison spread on perfect draw",!,✖,✖,✖,✖,E,,
+39,,Legend of Acrius,1,0,power,DPS,,"Shock blast
+Trench Barrel",✖,▲,✔,!,✖,C,,
+77,,Leviathan's Breath,8,0,power,DPS,,"Unstoppable
+Volatile void blast on perfect draw hit
+Archer's Tempo",✖,!,✖,✖,✖,E,,
+78,,Lodestar,26,52,primary,add clear,,"Meter filled by doing Arc damage
+Special reload to consume energy and jolt on hipfire hit
+30% damage against Arc-debuffed enemies while ADS",✖,✖,✖,!,✖,F,,
+3,,Lord of Wolves,4,100,special,DPS,,"Massively increased damage on hip-fire
+Fires scorching bursts of bullets",!,▲,▲,!,✖,C,,
+79,,Lorentz Driver,15,35,special,add clear,,"Void implosion on kill
+Lagrangian Sight target marking and ammo generation",✖,✖,✖,✖,✖,F,,
+20,,Lumina,7,58,primary,utility,,"2 Remnants on kill
+Single target 35% buff Noble Rounds",✖,!,✖,✖,!,D,,
+40,,Malfeasance,4,57,primary,"DPS
+add clear",,"Unstoppable
+5 shot embedded explosion
+Increased damage against Taken / Witherhoard blights",✖,✖,!,✖,✖,E,,
+41,,Merciless,1,55,special,DPS,,"Conserve Momentum charge time reduction on hit
+Impetus damage buff on kill-reload",✖,!,✖,✖,✖,E,,
+80,,Microcosm,24,47,power,DPS,,"5x damage to shields
+Super energy on kills
+20% damage for 20s after super end",✖,✖,✖,✖,✖,E,,
+119,,MIDA Multi-Tool,1,60,primary,add clear,,"Movement bonus
+Radar during ADS",✖,✖,✖,✖,✖,F,,
+42,,Monte Carlo,8,52,primary,add clear,,"Chance to return melee on kill
+Bayonet at Markov Chain x5",✖,✖,✖,✖,✖,E,,
+21,,Necrochasm,22,53,primary,add clear,,"Cursed Thrall explosion on precision or Cursed Thrall kill
+Outlaw, One for Thrall",!,✖,✖,✖,✖,E,,
+8,,New Land Beyond,26,54,special,DPS,,"Asymptotically stacking durationless on-crit buff
+Sprint cancellable bolt-action firing",!,!,!,!,✖,D,,
+,,New Malpais,27,24,special,"DPS
+add clear",,"Embedding projectiles that detonate on alternate fire
+Suspends on 2 shots detonated
+Detonations unravel",✖,✖,✖,✖,✖,E,,
+120,,No Time to Explain,12,57,primary,add clear,,Time-slip portal on precision hits,✖,✖,✖,✖,✖,F,,
+81,,One Thousand Voices,4,80,power,DPS,,10 bolt igniting solar explosion,✖,✖,✖,✖,✖,F,,
+82,,Osteo Striga,16,30,primary,add clear,,Poison spread on tracking projectile hits,!,✖,✖,✖,✖,E,,
+9,,Outbreak Perfected,6,54,primary,"DPS
+add clear",,Nanite spawn on precision hits,!,✖,✖,✖,✖,D,,
+4,,Parasite,16,0,power,DPS,,"Worm's Hunger burst projectile
+Worm Byproduct other weapons damage boost",▲,✔,✔,▲,▲,A,,
+83,,Polaris Lance,3,55,primary,add clear,,"Scorching explosive round on four precision hits
+Dragonfly",✖,✖,✖,✖,✖,E,,
+,,Praxic Blade,28,?,special,"utility
+add clear",,"Customizable sword multitool
+Changes effects based on subclass",✔,!,▲,!,▲,B,,
+84,,Prometheus Lens,2,100,special,add clear,,"Ramping scorching beam
+Incandescent",!,✖,✖,✖,✖,E,,
+85,,Quicksilver Storm,18,59,primary,add clear,,"Grenade charges on hit
+Nanotech Tracer Missiles",✖,✖,✖,✖,✖,E,,
+43,,Rat King,1,80,primary,add clear,,"Rat Pack fire rate and mag increase
+Invisibility and regen on kill",✖,✖,✖,!,✖,E,,
+86,,Red Death Reformed,24,58,primary,add clear,,"Heal Clip with reload boost and Cure x2 on kill
+Increased damage as health lowers
+Spawns ToF healing grenade on 3 kills",✖,✖,✖,✖,✖,E,,
+87,,Revision Zero,19,58,primary,"add clear
+DPS",,"Anti-Barrier
+Hunter's Trace sniper shots on precision hits",!,✖,✖,✖,✖,E,,
+44,,Riskrunner,1,50,primary,add clear,,Arc Conductor chain lightning and DR shield,✖,✖,✖,!,✖,E,,
+88,,Ruinous Effigy,11,46,special,add clear,,Transmutation spheres on kill,✖,✖,✖,✖,✖,F,,
+89,,Salvation's Grip,12,40,power,utility,,Stasis crystal projectiles,✖,✖,✖,✖,▲,D,,
+,,Service of Luzaku,28,49,power,add clear,,"Kills create nests that generate threadlings
+Nests that last for 20s can be converted into tangles
+Refill on hip-fire healing allies or nests",!,✖,✖,✖,✖,E,,
+121,,Skyburner's Oath,1,60,primary,add clear,,"Hip-fired scorching slugs
++18% against Cabal",✖,✖,✖,✖,✖,F,,
+90,,Slayer's Fang,25,70,special,"DPS
+add clear",,"Overload
+15% damage, ? reload, Weaken for 7s on kill, Void Breach, or allied Slayer's Fang kill",✖,!,✖,✖,✖,E,,
+91,,Sleeper Simulant,3,10,power,DPS,,Overpenetrating and reflecting shots,✖,✖,✖,✖,✖,E,,
+10,,Still Hunt,24,70,special,DPS,,"Golden Gun granted on 6 crits or 12 orbs
+Returns ammo when Golden Gun is cast",!,✔,✔,✔,✔,A,,
+122,,Sturm,1,30,primary,add clear,,Overcharged rounds,✖,✖,✖,✖,✖,F,,
+22,,Sunshot,1,53,primary,add clear,,Scorching explosions on kill,▲,✖,!,!,✖,D,,
+123,,SUROS Regime,3,90,primary,add clear,,Ramping fire rate,✖,✖,✖,✖,✖,F,,
+124,,Sweet Business,1,80,primary,add clear,,"Ramping fire rate
+Occasional explosive round",✖,✖,✖,✖,✖,F,,
+125,,Symmetry,9,60,primary,add clear,,"Tracking arc seekers
+Dynamic charge stacks",✖,✖,✖,✖,✖,F,,
+45,,Tarrabah,7,100,primary,DPS,,"Ravenous Beast fire rate increase on damage
+50% Solar resist while Ravenous Beast is active",✖,✖,✖,✖,✖,E,,
+126,,Telesto,2,55,special,add clear,,"Sticky proximity bolts
+Special reload after 3 Void triple kills for bolt storm",✖,✖,✖,✖,✖,F,,
+46,,Tessellation,22,33,special,"add clear
+DPS",,Explosive projectile on grenade consumption,!,✖,✖,✖,▲,D,,
+92,,The Chaperone,4,65,special,DPS,,The Roadborn precision damage buff,✖,✖,✖,✖,✖,F,,
+127,,The Colony,2,70,power,"add clear
+DPS",,Seeking crawling arachnid projectiles,✖,✖,✖,✖,✖,F,,
+23,,The Fourth Horseman,10,0,special,DPS,,Increased damage on successive shots,✖,!,✖,✖,▲,D,,
+47,,The Huckleberry,3,100,primary,add clear,,"Full reload and pre-nerf Rampage on kill
+Fire rate increase over time
+Kinetic Tremors",!,✖,✖,✖,✖,E,,
+128,,The Jade Rabbit,2,30,primary,add clear,,Buffs body damage on precision hits,✖,✖,✖,✖,✖,F,,
+93,,The Lament,12,100,power,DPS,,"Barrier
+Banshee's Wail damage ramping on hit
+Heal on hit",✖,✖,✖,✖,✖,E,,
+94,,The Last Word,5,40,primary,add clear,,Fan Fire hip fire precision hit damage increase,✖,✖,✖,✖,✖,F,,
+95,,The Manticore,19,57,primary,"add clear
+DPS",,"Special hover mode charged on hits
+Up to 100% damage while hovering
+Partial refund on airborne kill and 15HP Void Overshield",✖,✖,✖,✖,✖,E,,
+5,,The Navigator,21,60,special,utility,,"Heal on hit, regen, and Woven Mail for shot allies
+Sever on shot enemies
+Grapple point creation on alt fire",!,✔,▲,✔,▲,B,,
+96,,The Prospector,1,30,power,"DPS
+add clear",,Exploding submunition grenades,✖,✖,✖,✖,✖,F,,
+97,,The Queenbreaker,4,90,power,DPS,,Dual mode blinding/adaptive burst linear,✖,✖,✖,✖,✖,E,,
+129,,The Wardcliff Coil,1,0,power,DPS,,"Tracking rocket volley
+Grants allies Bolt Charge per 2 rockets fired",✖,!,✖,✖,✖,E,,
+48,,Third Iteration,27,51,primary,add clear,,"Mark on ADS, invis on marked or concentrated crit kill
+Extra damage to marked targets
+Weaken splash on concentrated crit kill",✖,✖,✖,✖,✖,E,,
+49,,Thorn,6,60,primary,add clear,,"Poison on hit
+Remnant on kill
+Soul Devourer increased poison damage",✖,✖,✖,✖,✖,F,,
+50,,Thunderlord,5,30,power,"DPS
+add clear",,"Overload
+Ramping fire rate
+Lightning strike every 13 hits or kill",✖,!,✖,✖,✖,D,,
+51,,Ticuu's Divination,13,65,primary,"add clear
+DPS",,"Sacred Flame on hip-fire hit
+Detonation on aimed shots",!,✖,✖,✖,✖,E,,
+52,,Tommy's Matchbook,10,56,primary,add clear,,Ramping damage and scorch application,!,✖,✖,✖,✖,E,,
+98,,Touch of Malice,18,58,primary,DPS,,"Charged with Blight on 10 precision hits
+Increased final round damage",✖,✖,✖,✖,✖,E,,
+2,,Tractor Cannon,1,0,power,utility,,"30% debuff on all targets (including immune)
+Suppressing and weakening blast
+The Scientific Method movement and handling bonus",▲,✔,✔,✔,✔,S,,
+99,,Traveler's Chosen,11,44,primary,add clear,,"Gathering Light stacks on kill
+Full ability recharge on consuming 10 stacks",✖,✖,✖,✖,✖,F,,
+130,,Trespasser,17,50,primary,add clear,,Unrepentant boosted burst on kill-reload,✖,✖,✖,✖,✖,F,,
+24,,Trinity Ghoul,4,52,primary,add clear,,Lightning Rod chains on kill,▲,✖,!,!,!,C,,
+131,,Truth,7,40,power,"add clear
+DPS",,Aggressive tracking 3 shot mag,✖,✖,✖,✖,✖,F,,
+,,Turncoat,29,39,primary,add clear,,,,,,,,,,
+100,,Two-Tailed Fox,4,30,power,DPS,,"Multi-affinity trio of homing rockets
+Applies suppression, scorch, and jolt",✖,✖,✖,✖,✖,F,,
+101,,Verglas Curve,20,70,primary,add clear,,Hail Barrage crystal generation stacks on kill,✖,✖,✖,!,!,E,,
+102,,Vex Mythoclast,14,40,primary,add clear,,Overcharge linear shots on kill stacks,!,✖,✖,✖,✖,E,,
+53,,Vexcalibur,20,55,special,utility,,"Spread bolts
+Allied Void Overshield on block
+Full energy on overshield melee kill",!,✖,!,✖,✖,D,,
+132,,Vigilance Wing,1,55,primary,add clear,,"Regen on ally death
+Stat boosts if solo",✖,✖,✖,✖,✖,F,,
+103,,Wavesplitter,4,50,special,add clear,,"Oscillating damage level
+Supercharged Battery suppression on orb pickup",✖,✖,✖,✖,✖,F,,
+54,,Whirling Ovation,27,64,power,DPS,,"Anticipation charges on dealing damage
+Variable rocket damage based on charge
+Doesn't need to reload",!,▲,✔,▲,!,C,,
+104,,Whisper of the Worm,3,50,power,DPS,,Whispered Breathing damage increase on ADS,✖,!,✖,✖,✖,E,,
+105,,Wicked Implement,21,51,primary,add clear,,"Creeping Attrition slow crits on 3 precision hits
+Stasis shard on Creeping Attrition kill
+Headstone",!,✖,✖,✖,✖,E,,
+106,,Winterbite,20,0,power,DPS,,"Freezing explosive projectiles
+50% melee damage boost while loaded",!,✖,✖,✖,✖,E,,
+107,,Wish-Ender,4,50,primary,add clear,,"Anti-Barrier
+Vision through walls
+Overpenetrating arrows",✖,✖,✖,✖,✖,F,,
+108,,Wish-Keeper,23,54,primary,add clear,,Precision hits and kills build up a suspending trap,✖,✖,✖,✖,✖,F,,
+109,,Witherhoard,11,46,special,add clear,,"Poisoning direct shots do DoT over 9.5s
+Poisoning ground pools do DoT over 4.5s",!,!,✖,✖,✖,E,,
+,,Wolfsbane,27,40,power,DPS,,"Spawns Quicksilver nanites that heal on hit
+Full charge from light attacks gives bonus damage
+Charged heavy attack creates flaming cyclone",!,▲,▲,✖,!,C,,
+133,,Worldline Zero,3,100,power,add clear,,Tesseract blink attack after sprinting,✖,✖,✖,✖,!,F,,
+110,,Xenophage,8,3,power,add clear,,Solar explosive rounds,✖,✖,✖,✖,!,E,,

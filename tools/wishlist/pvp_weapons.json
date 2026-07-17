@@ -1,0 +1,26 @@
+{
+  "source": "Daltnix - 'The 20 BEST Weapons For PVP In Destiny 2 Forever and Always (God Roll Guide)', published 2026-06-20 (post Monument of Triumph)",
+  "note": "Perk-focused guide; curator specifies trait perks only (no barrel/magazine). Perk names grouped by trait column as stated in the video.",
+  "weapons": [
+    {"rank": 1, "name": "Hawkmoon", "exotic": true, "random": true, "columns": [["Opening Shot", "Rangefinder", "Moving Target", "Eye of the Storm"]]},
+    {"rank": 2, "name": "The Martlet", "columns": [["Headseeker", "Lone Wolf", "Keep Away"], ["Sword Logic", "Kill Clip", "Desperado", "Zen Moment"]]},
+    {"rank": 3, "name": "Spare Rations", "columns": [["Slideshot", "Rapid Hit", "Moving Target", "Keep Away"], ["Opening Shot", "Eye of the Storm", "Explosive Payload"]]},
+    {"rank": 4, "name": "Voltaic Shade", "columns": [["Delicate Tuning", "Rapid Hit", "Keep Away"], ["Precision Instrument"]]},
+    {"rank": 5, "name": "Igneous Hammer", "columns": [["Rapid Hit", "Keep Away", "Moving Target", "Slideshot", "Lone Wolf"], ["Opening Shot", "Eye of the Storm", "Precision Instrument"]]},
+    {"rank": 6, "name": "Everburning Glitz", "columns": [["Lone Wolf", "Dynamic Sway Reduction"], ["Kinetic Tremors", "Tap the Trigger", "Zen Moment"]]},
+    {"rank": 7, "name": "Shayura's Wrath", "columns": [["Dynamic Sway Reduction", "Keep Away", "Zen Moment", "Lone Wolf"], ["Tap the Trigger", "Kill Clip", "Target Lock", "Master of Arms", "Rangefinder"]]},
+    {"rank": 8, "name": "The Inquisitor", "columns": [["Lone Wolf", "Slideshot", "Threat Detector"], ["Closing Time", "Opening Shot"]]},
+    {"rank": 9, "name": "M-17 \"Fast Talker\"", "columns": [["Dynamic Sway Reduction", "Delicate Tuning", "Killing Wind"], ["Target Lock", "Kill Clip", "Tap the Trigger", "Master of Arms"]]},
+    {"rank": 10, "name": "The Last Word", "exotic": true, "random": false},
+    {"rank": 11, "name": "High Tyrant", "columns": [["Delicate Tuning", "Rapid Hit"], ["Master of Arms", "Headseeker"]]},
+    {"rank": 12, "name": "Ace of Spades", "exotic": true, "random": false},
+    {"rank": 13, "name": "Redrix's Estoc", "columns": [["Lone Wolf", "Zen Moment"], ["Headseeker", "Kill Clip", "Elemental Honing"]]},
+    {"rank": 14, "name": "Modified B-7 Pistol", "columns": [["Keep Away", "Delicate Tuning"], ["Eye of the Storm", "Opening Shot"]]},
+    {"rank": 15, "name": "The Jade Rabbit", "exotic": true, "random": false},
+    {"rank": 16, "name": "No Hesitation", "columns": [["Physic"], ["Circle of Life"]]},
+    {"rank": 17, "name": "Triple Laureate", "columns": [["Rangefinder"], ["Opening Shot", "Trench Barrel", "One-Two Punch"]]},
+    {"rank": 18, "name": "Eyasluna", "columns": [["Zen Moment", "Slideshot", "Rangefinder"], ["Moving Target", "Precision Instrument"]]},
+    {"rank": 19, "name": "Felwinter's Lie", "columns": [["Slideshot", "Lone Wolf", "Threat Detector"], ["Opening Shot", "Iron Reach", "Closing Time"]]},
+    {"rank": 20, "name": "Vex Mythoclast", "exotic": true, "random": false}
+  ]
+}

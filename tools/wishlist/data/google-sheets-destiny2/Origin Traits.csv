@@ -1,0 +1,159 @@
+INFO,,,,,,,ANALYSIS,,
+🖼️,Name,Season,Tags,Trigger,Effect,Notable Weapons,Description,Rank,Tier
+,Accelerated Assault,28,"damage
+refill",3 hits with 1.2s between (checks every 0.8s),"5% damage for 4s, 10% mag refill (reload and 8s timer for 1 mag weapons)
+6% damage","Refurbished A499, Uncivil Discourse, A Good Shout, Riptide, Psi Aeterna IV",basically free 6% damage and pseudo Rewind Rounds,1,S
+,Timelost Magazine,26,"refill
+ability","weapon kill
+super end","1% extra super energy
+mag refill, 2x mag for 20s
+15% damage during 20s effect","Hezen Vengeance, Praedyth's Revenge, Corrective Measure, Fatebringer","actually doubling mag size is game-warping for many DPS weapons, super energy is just a plus",2,S
+,Winterized Gear,29,,,,,,,
+,Veteran's Wisdom,29,,,,,,,
+,Unburied Treasure,29,,,,,,,
+,Loss,29,,,,,,,
+,Ignoble Deeds,29,,,,,,,
+,Heretical Behavior,29,,,,,,,
+,Forge's Kin,29,,,,,,,
+,Featherweight,29,,,,,,,
+,Fail-deadly,29,,,,,,,
+,Eyes Up,29,,,,,,,
+,Elliptical Orbit,29,,,,,,,
+,Subjugation,26,"damage
+survivability","shooting minors/elites
+shooting miniboss+","Explosive Payload-like effect
+exhaust on-hit
+? stability, ? reload for ?s on damage","Unsworn, Unloved, Unworthy, Unvoiced",excellent jack-of-all-trades on any roam wepaon,3,S
+,Souldrinker,16,survivability,reload after weapon hits,"HP based on mag% hit (50 HP for full mag, GL hits count as 50%)
+doubled",Forbearance,"very noticeable when enhanced, still solid source of sustain otherwise",4,S
+,Land Tank,16,survivability,weapon kill (3 stacks),"10 health, 5% DR per stack for 5s
+duration doubled","Explosive Personality, Recurrent Impact","better, more universal version of Vanguard Determination",5,S
+,Cursed Thrall,22,splash,melee kill,"enemies explode on weapon kill for 7.5s
+15s","Song of Ir Yût, Swordbreaker, Word of Crota, Abyss Defiant, Oversoul Edict","besides being situational, single kill splash perk is very solid",6,S
+,Nanotech Tracer Missiles,20,damage,"scoring hits with a portion of the mag (primaries: 45%, fusions: ?, snipers: 50, GLs: 30%, LMGs: 25%)","tracking missile fired with 1s ICD on hit count
++20% rocket damage","Dimensional Hypotrochoid, Circular Logic",best zero requirement on-hit damage trait,7,S
+,Imperial Allegiance,28,"damage
+refill","ally within 15m (3 stacks)
+above 50% heat","up to 1.105x cooling multiplier, ? charge rate
+up to 10.5% damage",Conspiracy Honed,effectively free ~5% damage and potentially bigger mag in fireteams,8,A
+,Nano-Munitions,23,refill,15m of ally,"gives stack (up to 7) every 3s, granting 25% mag refill per stack
+time per stack halved","Subjunctive, Adhortative",allows essentially infinite firing on the right DPS weapons,9,A
+,Tenacity,27,"damage
+stats",weapon kill within 15m of enemy (20 stacks),"0.5% damage, 2.5? handling, 2.5? reload per stack
+?handling, ? reload","Ribbontail, Phoneutria Fera, Synanceia, Returned Memory, Mercury-A","like Field-Tested but boosts damage too, more straightforward requirements",10,A
+,Advanced Reflexes,23,stats,ADS or guard 1s after taking damage,"30 mobility, 40 handling, 35 charge rate, 5% damage for 7.5s, not refreshable","Twilight Oath, Vouchsafe","free 5% damage increase during most phases, only issue is refresh",11,A
+,Bray Legacy,25,ability,enemy hit,shortest remaining cooldown ability (multiple charges are summed): ?%,"VS Pyroelectric Propellant, VS Velocity Baton, VS Chill Inhibitor, Ahab Char, Eighty-Six","awkward with ability selection for DPS regen, decent otherwise for roam",12,A
+,Frame of Reference,27,"damage
+stats",weapon kill (5 stacks),"1.4% damage, ? range, ? reload per stack, timer paused on stow","The When and Where, Antedate, Finite Maybe, Lance Ephemeral","relatively small damage boost, solid for roam due to stat bumps",13,A
+,Dark Ether Reaper,25,"refill
+splash",4 minors or 1 major kill,"spawns explosive charge which detonates on shot/collision and overflows mag by 40%
+spawns 2 charges and overflows by 80%","Bitter/Sweet, Heretic's Fervor, Vantage Point, Insurmountable","would be really good on a machine gun, otherwise still solid for roam weapons",14,A
+,Cast No Shadows,24,refill,melee damage,"? handling, 20% mag refill
+up to 100% mag overflow","Perfect Paradox, Martyr's Retribution, Breachlight","pairs very well with certain weapon types, not amazing otherwise",15,A
+,Extrovert,17,survivability,kill within 15m of 3 enemies or Nightmare,"60 HP, 3s ICD
+doubled","Nezarec's Whisper, Hollow Denial","high ICD only thing stopping this from being insane, works with glaive melees",16,A
+,Dealer's Choice,24,ability,"weapon kill (increases with more trait weapons or Ace of Spades, Khvostov 7G-0X, and Still Hunt)",0.3-3% super energy,"The Call, Pro Memoria",insane super generation potential on a pretty decent weapon subset,17,A
+,Problem Solver,27,"survivability
+stats",filling hit counter against miniboss+,"exhaust for 5s, 50? reload and 50? handling for 10s
+2.5s duration","Mint Retrograde, Lionfish-4fr, Outrageous Fortune","directly powercrept Psychohack, usable for roam and great for exhaust during DPS",18,A
+,Radiolaria Transposer,24,splash,kill counter (3 minors or 1 elite),"explosion and DoT pool for ?s under enemy
+?s duration","Aberrant Action, Speleologist, Chronophage, Lost Signal, Corrasion","kill requirement doesn't scale amazingly into low power content, still nice splash",19,A
+,Ambush,19,damage,no incoming/outgoing damage for 5s,"20 range, 20 handling, 0.85x draw time, ~9-11% damage for 2s
+40 range, 40 handling, 0.7x draw time","Fire and Forget, Retrofit Escapade",free ~10% damage boost for upfront burst,20,B
+,Bray Inheritance,19,ability,enemy hit,"all abilities: 0.35% (Trustee), 0.42% (Commemoration), 0.46% (Posterity), 0.86% (Heritage), 1.5% (Succession), 2% (Bequest)
+doubled","Commemoration, Bequest, Trustee, Posterity","quite noticeable with splash effects, seems to have similar tick values to Legacy, but to all abilities",21,B
+,Indomitability,23,ability,weapon kill,"light super: 5% grenade energy
+dark super: 5% melee energy","Forbearance, Succession, The Mountaintop, The Recluse, Luna's Howl, Midnight Coup, Blast Furnace",straightforward extra ability energy,22,B
+,Runneth Over,18,refill,reloading within 15m of ally,"10% mag overflow per ally
+doubled","Psychopomp, Watchful Eye, Qullim's Terminus, Defiance of Yasmin, Afterlight",free overflow effect especially for low mag DPS options,23,B
+,"Nail, Meet Hammer",28,"damage
+stats","passive
+ammo type","?% damage to shields
++?% special progress (primary/heavy), +?% heavy progress (special)","The Heron, Action Item",first ammo generating origin trait,24,B
+,Skulking Wolf,16,PvP,weapon kill while below 70? HP,"enhanced radar, less accurate enemies, no passive pings on enemy radar for 10s
+?s duration","Tinasha's Mastery, Multimach CCX, Tusk of the Boar, Archon's Thunder","Amplified deaggro effect, very noticeable but HP threshold is quite low",25,B
+,Contending Cascade,27,"splash
+stats","rapid final blows, any source
+12 killstreak, then kill","? handling and ? reload per stack for ?s
+elemental damage explosion on kills
+2 less kills
+",Submersion,"very unrealistic killstreak requirement, stats are nice though, blast is quite underwhelming",26,B
+,Restoration Ritual,21,refill,ally revive or finisher,refills mag when it hits 0,"Cold Comfort, Greasy Luck","outclassed completely by other origin traits, but still better than most roam and DPS origin traits",27,B
+,Veist Stinger,16,refill,"hits (autos/SMGs: 2%, sidearms: 4%, bows/LFRs: 10%, swords: ?%)","25% mag refill, -10% ADS movement penalty, 0.85x draw time, ? charge rate for 7s, 4s ICD
+doubled?","Scintillation, Irukandji, Fortunate Star","underrated post-nerf, allows for full reserve dumps in some cases",28,B
+,Field-Tested,20,stats,hits or kills,"scaling infinite duration buff to range, stability, handling, reload, charge rate, and guard resistance until death","Anonymous Autumn, Tusk of the Boar, Multimach CCX, Harsh Language, Jurassic Green, Theodolite","surprisingly easy to stack on certain weapon types, solid and reliable reload boost if no deaths",29,B
+,Gun and Run,16,stats,"3 minors or 1 major kill within 10s? (? stacks for ?s), then sprinting for ?s","?% mag refill, 0.?x draw time for ?s","Eclipstic Distaff, Backfang",decent QoL on small mag or high lethality weapon types,30,B
+,Tex Balanced Stock,19,stats,4 hipfire hits with <4s between each,"20 handling, 20 reload, 20 range, 0.9x reload duration, 1.5deg cone, -10% ADS movement penalty for 4s
+40 handling, 40 reload","Wilderflight, Yeartide Apex","free reload scalar, especially on weapons where hip-firing is natural",31,B
+,Willing Vessel,26,stats,weapon damage or kill (5 stacks),"? stability, ? handling, ? reload, ? charge rate per stack
+stacks decay every ?s","Adamantite, Psychopomp",like Field-Tested but with decay,32,B
+,Photoinhibition,25,damage,"damage to enemy shield
+breaking enemy shield","~34% damage to shields (includes Barriers), ~22% to overshields
+disorients enemy (and surroundings if matching)","Reckless Oracle, Ancient Gospel","second half of effect only useful on shield-break add clear weapons, and niche",33,B
+,Air-Cooled Core,28,stats,"full mag or low heat (<10%)
+0.5s sprint","? handling, ?% ADS penalty
+? reload/vent for 6s","Uncivil Discourse, Refurbished A499, M-17 ""Fast Talker""",basically just free reload boost that is often active,34,B
+,Bitterspite,17,stats,"20 damage received (5 stacks), consumed on reload","10 reload, ~-2% reload duration per stack, up to 5x","Stormchaser, Unforgiven","decent neutral reload option, not necessarily consistent",35,B
+,Vanguard Determination,27,survivability,weapon kill within 20s of class ability (3 stacks),"2% DR per stack for 10s
+2.5s duration","Mint Retrograde, Mercury-A, Pre Astyanax IV, Aurora Dawn, Theodolite",very minor DR but pretty easy to get without playing differently,36,B
+,Harmonic Resonance,20,"stats
+damage",another weapon equipped with this trait (Conditional Finality included),"10 handling per weapon, 20 reload for 2 weapons, 0.95x reload duration, 3.33%/10% damage to Dread/Lucent Hive for 1/2 weapons
+damage bonus doubled","Koraxis's Distress, Briar's Contempt",decent damage boost on specific enemies,37,C
+,Häkke Breach Armaments,16,damage,"damage against vehicles, turrets, and constructs","15% (vehicles), 30% (turrets, constructs), 45% (crystals)
+20% vehicles, 60% turrets/constructs","Synanceia, Outrageous Fortune, Phoneutria Fera, Aureus Neutralizer, Rake Angle, Veleda-F, Ragnhild-D, Crowning Duologue",solid damage boost on niche enemy types and crystals,38,C
+,Gravity Well,26,refill,reloading within 15m of certain pickups,"picks up ammo bricks, motes, and crests","New Pacific Epitaph, Wilderflight, A Sudden Death, Greasy Luck","nice neutral option, useful for speedrunning, not very helpful in most gameplay",39,C
+,To Excess,17,stats,weapon kill with full super,"20 grenade, 20 melee for 12s
+stats doubled","Fixed Odds, CALUS Mini-Tool, Drang (Baroque), Goldtusk","nice stat bump with potentially annoying requirement, definitely for neutral and not for DPS",40,C
+,Wild Card,22,splash,kills,"bolts spawned on enemy corpse (minors: 1, elites: 3, minibosses: ?, bosses/champs: 7), 6s ICD","Stars in Shadow, The Summoner, Pre Astyanax IV, Returned Memory","really noticeable ICD, bolts are one of the worst splash effects from origin traits",41,C
+,Stunning Recovery,16,"refill
+survivability",champ stun,"mag refill, 60 HP, health regen, 40 class for 3s","Lotus-Eater, The Slammer, Rake Angle","helpful in champ content for QoL, useless otherwise",42,C
+,Collective Purpose,24,stats,ally within 15m (5 stacks),"? range, 5 handling, 5 charge rate, -2.5% draw time per stack","Non-Denouement, Summum Bonum","stat boosts largely unhelpful outside of bow/sword, and even then there are better origins for draw/charge",43,C
+,Noble Deeds,20,stats,"healing, reviving, empowering, or 3.0 provision to allies (provides 10 stacks)","30 handling, 30 reload, 20 charge rate until no stacks (kills remove 1 each)
+doubled","Regnant, Royal Executioner, Caretaker","build-specific stat booster, but very easy upkeep if conditions met",44,C
+,Alacrity,16,stats,last alive or solo,"20 range, 20 stability, 50 reload, 10 aim assist","The Summoner, Incisor, Unexpected Resurgence, Exalted Truth","free 50 reload if solo, otherwise useless",45,C
+,Dream Work,17,refill,"weapon assist or kill on ally-damaged enemy, once per reload","66% mag refill (can overflow), ? reload, ? draw time for ?s","Festival Flight, Yeartide Apex, Crowning Duologue","awkward and unreliable trigger condition, decent for guaranteed assist gameplay",46,C
+,Psychohack,16,survivability,"multiple weapon hits (bow/glaive/GL/rocket/sniper: 3, scout: 7, fusion: 14 other primaries: 12-16)","exhausts target for 5s, not refreshable
+duration doubled","The Enigma, Father's Sins","complete downgrade from Subjugation and Problem Solver, also has lower QoL",47,C
+,Exhaustive Research,27,damage,ADS for 1s within 60m of enemy,"replaces next bullet with identical damage seeking missile
+rocket damage increased by ?%",Precipial,"very niche ranged 12P use case, otherwise pretty bad on other weapons",48,D
+,Omolon Fluid Dynamics,16,stats,100-50% of mag,"20-0 stability, 30-0 reload","Path of Least Resistance, Ribbontail",basically worse Compulsive Reloader,49,D
+,Explosive Pact,21,stats,grenade use or kill or heal,"? stability, ~9 reload, ~-1% reload duration per stack, up to 5x, for 7.5s","Apex Predator, Chattering Bone, Age-Old Bond","duration definitely given grenade uptime requirements, low stat boost for ability usage cost",50,D
+,Paracausal Fluid,26,stats,damage dealt,"? handling, 50 mobility, ? charge rate for 3s
+? mobility while stowed",Temptation's Hook,free charge rate and handling,51,D
+,Sundering,23,stats,shield break or vehicle/construct destroyed,"40 reload, 0.95x reload duration, and 0.9x draw time for 7s
+stats doubled",Indebted Kindness,Photoinhibition has better effect for similar trigger,52,D
+,Rasputin's Arsenal,19,refill,shield break,50% mag refill,"IKELOS_SG_v1.0.3, IKELOS_SMG_v1.0.3","decent QoL effect, trigger too niche",53,D
+,Dawning Surprise,19,"ability
+survivability",filling kill counter (6 minors / 2 majors),"spawns Dawning gift for 10s (10% to abilities, ~20 HP, HP regen)
+-1 minor requirement","Avalanche, Zephyr, Albedo Wing","kill counter too steep, effect is mathematically inefficient and requires pickup",54,D
+,Classy Contender,16,ability,weapon kill,5% class,"The Title, Hullabaloo","worst ability to regen, very minuscule amounts",55,D
+,Splicer Surge,25,stats,"reload after damage dealt (3 stacks), removed on stow","10-45 handling, 10-45 reload, 0.967x-0.9x reload duration","Chroma Rush, Gridskipper",requires a manual reload before even getting to 1st stage,56,D
+,Vanguard's Vindication,16,survivability,weapon kill,10 HP,"Lotus-Eater, Rake Angle, Undercurrent",very low HP gains unless multikill,57,D
+,One Quiet Moment,16,stats,"no incoming/outgoing damage for 5s
+kills reduce timer to 1.5s","20 handling, 40 reload, 0.95x reload duration, 25% movement speed on swords","The Summoner, Unwavering Duty, Incisor, Unexpected Resurgence, Exalted Truth",awkward reload timing since waiting after kill to reload is counterintuitive,58,D
+,Dragon's Vengeance,23,refill,critical health or ally death,"mag refill, 5 range, 10 handling, 0.975x charge/draw time for 11s
+doubled bonuses","Scatter Signal, Doomed Petitioner","bad activation requirement, decent effect",59,D
+,Hot Swap,18,stats,swapping to weapon after taking damage,"30 handling, 100 guard resist, 100 guard endurance, 100 charge rate for 4s
+handling doubled","Half-Truths, The Other Half, Pardon Our Dust, Retraced Path, Wastelander M5",free handling and charge rate boost for roam-style usage,60,E
+,SUROS Synergy,16,stats,reload,"40 handling, 20% flinch resist for 6s
+stats doubled","Exalted Truth, Fugue-55, Retrofit Escapade",handling only kicks in halfway through you benefiting from it,61,E
+,Search Party,18,stats,no allies within 15m,"-10% ADS movement penalty, 0.85x ADS duration
+?% ADS movement penalty, ?x ADS duration",Mechabre,"basically Snapshot on specials, QoL only",62,E
+,Unsated Hunger,21,stats,no abilities charged,"20 stability, 60 handling, 60 reload, 50 charge rate, 40 guard endurance
+stats doubled",Until Its Return,"awful activation requirement, great stat bumps though",63,E
+,Fleet Footed,27,stats,"dealing damage
+weapon kill","15 AE, ?% movement speed for ?s
+30 AE, ?% movement speed for ?s
+1s duration","Forgiveness, Aisha's Embrace, Unwavering Duty, Aureus Neutralizer, Auric Disabler",free movement speed but not very useful,64,E
+,Roar of Battle,27,stats,dealing or receiving damage every 0.5?s for 2s,"10? stability, 10? handling for 6s
+?s duration","Unwavering Duty, Forgiveness, Pure Recollection, Aisha's Embrace",unnoticeable stat bumps,65,F
+,Crossing Over,23,"stats
+damage","100-50% mag
+50-0% mag","10-5 range, 10-5 handling
+0-3% increased damage","A Sudden Death, Darkest Before",unnoticeable stat bumps and damage,66,F
+,Nadir Focus,22,stats,firing or swinging,"2 range, -1.5% cone, ?% lunge, ?% velocity per stack (up to 5) for 2s",Geodetic HSm,"quirky sword lunge increase, otherwise useless",67,F
+,Right Hook,18,stats,melee damage (+10s per proc),"10 range, 10 aim assist for 10s, up to 20s
+stats doubled","Tarnished Mettle, Brigand's Law, Planck's Stride",useless stats in PvE,68,F
+,Disaster Plan,21,stats,firing/swinging after ammo pickup,"15 range, 15% flinch resist, 100 charge rate for 1.5s",Just in Case,awful requirement for insanely short effect window,69,F
+,Head Rush,22,stats,standing up after crouching for 2 seconds,"? handling, 10 reload for 5s
+doubled",None,very unnatural activation requirement for extremely mediocre effect,70,F

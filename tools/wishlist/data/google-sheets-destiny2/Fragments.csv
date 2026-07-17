@@ -1,0 +1,121 @@
+INFORMATION,,,,,ANALYSIS,,
+🖼️,Name,Subclass,Effect,Stats,Description,Rank,Tier
+,Echo of Starvation,Void,Devour for 5-7.5s on orb or Void Breach pickup,-10 Class,Universal,1,S
+,Facet of Courage,Prismatic,Light abilities deal 10% more damage (+50% powered melee) to dark-debuffed enemies,+10 Grenade,DPS or Combination Blow builds,2,S
+,Facet of Purpose,Prismatic,Orbs give super-matching defensive elemental buff (5-9s) or Bolt Charge (Arc),-10 Class,Universal,3,S
+,Ember of Torches,Solar,Radiant to allies within 8m for 8-12s on powered melee hit,-10 Grenade,Universal,4,S
+,Ember of Benevolence,Solar,Applying solar effects to allies gives +300% ability regen for 7s,-10 Grenade,Healing loops in team settings,5,S
+,Thread of Generation,Strand,Grenade regen scaled with damage dealt,-10 Grenade,Universal,6,S
+,Echo of Vigilance,Void,"Void Overshield for 5-7.5s on critical health kill, 8s ICD",/,Passive sustain,7,A
+,Spark of Resistance,Arc,"25% DR for 2s if within 15m of 3 enemies, 2s linger",+10 Melee,Universal,8,A
+,Facet of Dominance,Prismatic,"Void grenade damage weakens
+Arc grenade damage jolts",-10 Grenade,Warlock debuff option and empowers Arc Soul,9,A
+,Thread of Warding,Strand,5s of Woven Mail on orb pickup,-10 Health,Universal,10,A
+,Facet of Protection,Prismatic,"15% DR for 2s if within 15m of 3 enemies, 2s linger",+10 Melee,Universal,11,A
+,Ember of Singeing,Solar,+400% base class regen for 3s on scorching non-scorched enemy,/,Neutral off titan,12,A
+,Whisper of Shards,Stasis,"`+500% base grenade regen rate for 6s on crystal break, 11s max",/,Universal,13,A
+,Echo of Obscurity,Void,5-7s invisibility on finisher,+10 Class,Invisibility off hunter,14,A
+,Whisper of Rime,Stasis,"Increases Frost Armor max stacks to x8, and duration to 13s",/,Universal,15,A
+,Thread of Evolution,Strand,"33% Threadling damage increase, faster travel and max distance",+10 Super,Threadling builds and Needlestorm damage,16,A
+,Whisper of Torment,Stasis,"7% grenade on damage taken, 12% with Frost Armor, 1s ICD",-10 Grenade,Universal,17,A
+,Echo of Undermining,Void,Weaken for 6s on void grenade hit,-10 Grenade,Secondary weaken source,18,B
+,Facet of Dawn,Prismatic,"Powered melee hits give Radiant to self for 5s
+Powered melee kills give Radiant to allies for 5s",-10 Melee,Self-buffing on Prismatic,19,B
+,Echo of Persistence,Void,Void buffs last 40-50% longer,"-10 Weapons (hunter)
+-10 Health (titan)
+-10 Class (warlock)",Universal,20,B
+,Spark of Beacons,Arc,Special/heavy arc kills while Amplified create 7.5m blinding blast,/,Weapon-focused Arc builds,21,B
+,Ember of Ashes,Solar,Scorch stacks increased by 50% (some exceptions),/,Ignition builds,22,B
+,Ember of Char,Solar,Ignitions apply 40-60 scorch to nearby enemies,+10 Grenade,Caliban's Hand and Hellion builds,23,B
+,Spark of Discharge,Arc,"Ionic Trace on 3 Arc weapon kill counter
+Bolt Charge stack on Ionic Trace pickup",-10 Melee,Weapon-focused Arc builds,24,B
+,Spark of Magnitude,Arc,"Lightning grenade fires 5 bolts
+Pulse grenade fires 8 pulses
+Storm grenade lasts longer",/,Grenade-focused Arc builds,25,B
+,Ember of Solace,Solar,Restoration and Radiant last 50% longer,/,Consistency-focused buff uptime,26,B
+,Whisper of Durance,Stasis,Slow and abilities last longer,+10 Melee,Universal,27,B
+,Whisper of Hunger,Stasis,Shards give more melee energy (50-75%),-20 Melee,Howl of the Storm builds,28,B
+,Facet of Solitude,Prismatic,"After 1/5 mag of precision hits, severing burst applied to enemy, 4s ICD",/,"Sever uptime on bosses, precision-based weapon builds",29,B
+,Thread of Isolation,Strand,"Sever burst on multiple precision hits, 4s ICD",/,"Sever uptime on bosses, precision-based weapon builds",30,B
+,Ember of Empyrean,Solar,"Solar kills extend Restoration and Radiant (1.5-6s, max 15s)",-10 Health,Universal,31,B
+,Thread of Fury,Strand,10-30% melee on Tangle damage,-10 Melee,"Berserker Frenzied Blade regen, Threadrunner Threaded Spike regen",32,B
+,Facet of Hope,Prismatic,+40-60% class regen while elemental buffed (1-2 buffs),/,Universal,33,B
+,Facet of Ruin,Prismatic,"Shatter or crystal destruction has additional damage tick
+Ignitions have 25% increased radius",+10 Weapons,GPG or Winter's Shroud builds,34,B
+,Thread of Continuity,Strand,50% longer Strand debuffs,/,Suspend builds,35,B
+,Ember of Searing,Solar,Scorched kills give melee energy (8-25%) and make Firesprites,+10 Class,Default choice for Firesprite generation,36,B
+,Whisper of Fissures,Stasis,Shatter or crystal destruction has additional damage tick,/,Universal,37,B
+,Facet of Blessing,Prismatic,"Melee kills start health regen, also applies to allies while Transcendent",/,Secondary survivability option,38,C
+,Facet of Mending,Prismatic,"Grenade kills give Cure x1
+Prismatic grenade kills give Cure x2",/,GPG or grapple melee builds,39,C
+,Ember of Resolve,Solar,Grenade kills give Cure x1,/,Sunbracers without Heat Rises and Starfire builds,40,C
+,Ember of Mercy,Solar,"Restoration x1 for 2-3s on Firesprite pickup, 5-7.5s on revive",+10 Health,Restoration without healing grenade or phoenix dive,41,C
+,Thread of Ascent,Strand,"40 handling, reload, 0.925x reload duration for 15s, loads current weapon on grenade usage, 4s ICD",+10 Weapons,"QoL secondary fragment, boss DPS reloads",42,C
+,Whisper of Impetus,Stasis,"Loads all weapons, 40 handling for 5s on powered melee damage, 5s ICD",+10 Health,Lucky Pants Revenant damage,43,C
+,Spark of Ions,Arc,10s ICD Ionic Trace on jolted kill or Bolt Charge kill,/,Shock-focused or Arcstrider melee builds,44,C
+,Spark of Shock,Arc,Jolt on arc grenade hit,-10 Grenade,Grenade-focused Arc builds,45,C
+,Facet of Command,Prismatic,"Freezing or suppressing refills readied weapon, 4s ICD
+Killing frozen/suppressed enemy spawns Stasis Shard or Void Breach",/,Rocket or GL reloads,46,C
+,Echo of Harvest,Void,"10s ICD orb on weakened kill
+5s ICD Void Breach on weakened kill",/,Universal,47,C
+,Spark of Amplitude,Arc,10s ICD orb on Amplified multikill,/,Universal,48,C
+,Whisper of Rending,Stasis,"100% primary damage to crystals, 50% to frozen targets",/,"Lucky Pants Revenant damage, exotic primary-focused builds",49,C
+,Echo of Remnants,Void,Improved void grenade duration (25-55%),/,Contraverse Hold,50,C
+,Spark of Frequency,Arc,"15 stability, 50 reload, 0.8x reload duration for 5s on melee hit
+Additional per-source Bolt Charge stack while Amplified",/,Weapon-focused Arc builds off warlock,51,C
+,Facet of Sacrifice,Prismatic,Light-buffed ability kills give 1% darkness Transcendence energy,+10 Grenade,Transcendence farming,52,C
+,Facet of Generosity,Prismatic,Kills while Transcendent spawn up to 4 large orbs (at 10 minors or 3 major kills) for allies only,/,Super-Transcendence chaining,53,C
+,Whisper of Refraction,Stasis,Stasis debuffed kills give class energy (9-50%),/,Universal,54,C
+,Facet of Balance,Prismatic,3 light/dark kills with 3s between give 10% melee/grenade,/,Universal,55,C
+,Facet of Awakening,Prismatic,"3 elemental kills with 6s between or super kill spawns element-matching pickup, 5s ICD",+10 Health,Secondary pickup generation for use with Honor,56,C
+,Echo of Cessation,Void,"Volatile burst on finisher
+Void Breach on volatile kill",/,Volatile builds,57,D
+,Echo of Reprisal,Void,"?% super energy on kills within 8m of 3+ enemies, 1s? ICD",/,Super farming builds,58,D
+,Echo of Provision,Void,3-8% melee on grenade damage,+10 Grenade,Melee cycling off warlock,59,D
+,Facet of Bravery,Prismatic,"Grenade kills give Volatile Rounds for 11s
+Powered melee kills give Unraveling Rounds for 11s",/,Barrier stun on Consecration/Combination Blow,60,D
+,Echo of Instability,Void,Volatile Rounds for 11s on grenade kill,+10 Melee,Weapon add clear if abilities weak,61,D
+,Thread of Propagation,Strand,Unraveling Rounds for 8s on powered melee kill,+10 Melee,Anti-Barrier on Berserker,62,D
+,Thread of Rebirth,Strand,Threadling on 3 kill counter with Strand weapons (scales with enemy type),/,Weapon-focused Strand builds,63,D
+,Whisper of Fractures,Stasis,x1 Frost Armor for melee shattering an enemy,/,Howl of the Storm builds,64,D
+,Spark of Feedback,Arc,"+100% melee damage for first hit for 5s on receiving melee damage, not refreshable",+10 Health,Melee-focused Arc builds,65,D
+,Whisper of Conduction,Stasis,15m shard magnetism on 1s delay,"+10 Health
++10 Super",QoL fragment for Rime builds,66,D
+,Whisper of Chains,Stasis,Small Stasis Shard on 3 kill counter with Frost Armor active,+10 Class,Universal,67,D
+,Facet of Honor,Prismatic,Using elemental pickup gives 5-10% matching Transcendence energy,+10 Melee,Transcendence farming,68,D
+,Ember of Blistering,Solar,Ignition kills give 8-25% grenade energy,/,Consecration,69,D
+,Whisper of Bonds,Stasis,10s ICD orb on frozen kill,-10 Super,Secondary orb fragment,70,D
+,Thread of Mind,Strand,Suspended kills give class energy (10-30%),/,Suspend builds,71,D
+,Thread of Wisdom,Strand,10s ICD orb on suspended kill,/,Secondary orb fragment,72,D
+,Facet of Devotion,Prismatic,Killing dark-debuffed enemies gives more light Transcendence energy (1-5%),+10 Melee,Transcendence farming,73,D
+,Ember of Eruption,Solar,Ignitions have 25% increased radius,+10 Melee,Ignition builds,74,D
+,Facet of Grace,Prismatic,"Kinetic weapon kills give 2% more Transcendence to self
+Super kills give 2% more Transcendence to allies",-10 Health,Transcendence farming,75,D
+,Ember of Wonder,Solar,10s ICD orb on ignition multikill,+10 Health,Ignition builds,76,D
+,Echo of Expulsion,Void,Explosion on void ability kill,+10 Super,Additional explosions on Tether kills,77,E
+,Echo of Exchange,Void,7.5-25% grenade on melee kill,+10 Melee,Glaive melee builds,78,E
+,Ember of Combustion,Solar,Solar super kills cause ignitions and make Firesprites,+10 Melee,Solar kills in Well and Deadshot spam,79,E
+,Echo of Domineering,Void,"30 Weapons, 4% move speed for 10s and current weapon load on suppress, 4s ICD
+Void Breach on suppressed kill",+10 Grenade,"Reloading using Tether, Two-Tailed Fox, or suppressor grenade, Wavesplitter builds",80,E
+,Ember of Tempering,Solar,Solar weapon kills give 20-60 Health (3 stacks) to allies within 15m for 8s and spawn Firesprites,-10 Class,Alternative Firesprite generation option,81,E
+,Facet of Defiance,Prismatic,Finishers create super-matching debuffing 7m explosion,+10 Class,Severance builds,82,E
+,Facet of Justice,Prismatic,Transcendent ability kills trigger ability-matched explosion,+10 Super,Super-Transcendence chaining,83,E
+,Whisper of Chill,Stasis,"Small Stasis Shard on 3 kill counter using stasis weapons, 5s ICD",/,Universal,84,E
+,Echo of Leeching,Void,Health regen for allies on melee kill,+10 Health,Glaive melee builds,85,E
+,Echo of Dilation,Void,"4m/s crouch, doubled crouched radar resolution","+10 Weapon
++10 Super",PvP,86,E
+,Thread of Transmutation,Strand,Weapon kills with Woven Mail spawn Tangles,+10 Melee,Throwaway secondary Tangle source,87,E
+,Spark of Momentum,Arc,Sliding over ammo refills weapon and gives Bolt Charge x3,/,Useless,88,F
+,Spark of Recharge,Arc,+400% grenade and melee regen while critical,/,Passive regen,89,F
+,Spark of Brilliance,Arc,Precision kills on blinded enemies create 7.5m blinding blast,+10 Super,Useless,90,F
+,Whisper of Reversal,Stasis,x10 Slow upon dealing or receiving physical melee damage with Frost Armor,/,Slow debuff on regular melee,91,F
+,Spark of Focus,Arc,+150% class regen after 1.25s of sprinting,"-10 Weapons (hunter)
+-10 Health (titan)
+-10 Class (warlock)",Passive regen,92,F
+,Spark of Volts,Arc,Amplified and Bolt Charge stack on finisher,+10 Class,Useless,93,F
+,Thread of Finality,Strand,Threadling on finisher (scales with enemy type),+10 Class,Severance Enclosure,94,F
+,Ember of Beams,Solar,Homing Blade Barrage and Daybreak projectiles,+10 Super,Situational Blade Barrage tracking,95,F
+,Thread of Binding,Strand,Suspend blast on super kill,+10 Health,Bladefury QoL,96,F
+,Whisper of Hedrons,Stasis,? handling and 30 Health for 11s on freeze,/,PvP,97,F
+,Spark of Haste,Arc,+50 Health after 1.25s of sprinting,/,PvP,98,F
+,Spark of Instinct,Arc,"Arc jolting burst on damage received at critical health, 15s ICD",/,PvP,99,F
