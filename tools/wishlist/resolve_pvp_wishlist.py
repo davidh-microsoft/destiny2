@@ -272,11 +272,24 @@ def generate_weapon_block(result):
 
 def generate_wishlist(results, source, begin_marker, end_marker):
     original = REPO_WISHLIST.read_text(encoding="utf-8")
-    base = original.split(begin_marker, 1)[0].rstrip()
-    existing_keys = {roll_key(l) for l in base.splitlines() if l.startswith("dimwishlist:")}
+    # Replace this section in place (preserving any content before AND after it)
+    # so section order is stable regardless of where the markers sit. If the
+    # markers are absent (first run), the section is appended at the end.
+    if begin_marker in original:
+        before = original.split(begin_marker, 1)[0].rstrip("\n")
+        tail = original.split(begin_marker, 1)[1]
+        after = tail.split(end_marker, 1)[1] if end_marker in tail else ""
+    else:
+        before = original.rstrip("\n")
+        after = ""
+    after = after.strip("\n")
+
+    # Deduplicate against every roll outside this section (before and after).
+    outside = before + "\n" + after
+    existing_keys = {roll_key(l) for l in outside.splitlines() if l.startswith("dimwishlist:")}
     generated_keys = set()
 
-    out = [base, "", begin_marker, f"// Source: {source}", ""]
+    section = [begin_marker, f"// Source: {source}", ""]
     for result in results:
         block = generate_weapon_block(result)
         filtered = []
@@ -287,11 +300,15 @@ def generate_wishlist(results, source, begin_marker, end_marker):
                     continue
                 generated_keys.add(key)
             filtered.append(line)
-        out.extend(filtered)
-    while out and out[-1] == "":
-        out.pop()
-    out.extend(["", end_marker, ""])
-    REPO_WISHLIST.write_text("\n".join(out), encoding="utf-8")
+        section.extend(filtered)
+    while section and section[-1] == "":
+        section.pop()
+    section.append(end_marker)
+
+    parts = [before, "", "\n".join(section)]
+    if after:
+        parts += ["", after]
+    REPO_WISHLIST.write_text("\n".join(parts).rstrip("\n") + "\n", encoding="utf-8")
     print(f"Generated entries: {len(generated_keys)}")
     print(f"Wishlist: {REPO_WISHLIST}")
 

@@ -620,19 +620,28 @@ def roll_key(line):
 def generate_wishlist(results):
     validate_selected_results(results)
     original = REPO_WISHLIST.read_text(encoding="utf-8")
-    base = original.split(GENERATED_BEGIN, 1)[0].rstrip()
-    output = [base, "", GENERATED_BEGIN, ""]
+    # Replace the Tier S section in place, preserving content before and after
+    # so section order is stable. Append at the end if markers are absent.
+    if GENERATED_BEGIN in original:
+        before = original.split(GENERATED_BEGIN, 1)[0].rstrip("\n")
+        tail = original.split(GENERATED_BEGIN, 1)[1]
+        after = tail.split(GENERATED_END, 1)[1] if GENERATED_END in tail else ""
+    else:
+        before = original.rstrip("\n")
+        after = ""
+    after = after.strip("\n")
+
+    outside = before + "\n" + after
     existing_roll_keys = {
         roll_key(line)
-        for line in base.splitlines()
+        for line in outside.splitlines()
         if line.startswith("dimwishlist:")
     }
     generated_roll_keys = set()
     block_count = 0
 
+    section = [GENERATED_BEGIN, ""]
     for result in results:
-        if result["name"] == "DECATUR 02":
-            continue
         for candidate in result["selected_candidates"]:
             block = generate_candidate_block(result, candidate)
             filtered_block = []
@@ -643,13 +652,17 @@ def generate_wishlist(results):
                         continue
                     generated_roll_keys.add(key)
                 filtered_block.append(line)
-            output.extend(filtered_block)
+            section.extend(filtered_block)
             block_count += 1
 
-    while output and output[-1] == "":
-        output.pop()
-    output.extend(["", GENERATED_END, ""])
-    REPO_WISHLIST.write_text("\n".join(output), encoding="utf-8")
+    while section and section[-1] == "":
+        section.pop()
+    section.append(GENERATED_END)
+
+    parts = [before, "", "\n".join(section)]
+    if after:
+        parts += ["", after]
+    REPO_WISHLIST.write_text("\n".join(parts).rstrip("\n") + "\n", encoding="utf-8")
     print(f"Generated item blocks: {block_count}")
     print(f"Generated unique wishlist entries: {len(generated_roll_keys)}")
     print(f"Wishlist: {REPO_WISHLIST}")

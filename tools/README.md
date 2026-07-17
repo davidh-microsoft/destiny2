@@ -18,6 +18,7 @@ tools/
     resolve_tier_s_wishlist.py   # PvE: Tier S weapons from the Endgame Analysis sheet
     resolve_pvp_wishlist.py      # PvP: Daltnix video + r/CrucibleGuidebook
     add_notes.py            # adds title + per-weapon //notes: source tags
+    reorder_sections.py     # moves PvP sections above the PvE (Tier S) section
     pvp_weapons.json        # Daltnix weapon/perk spec
     cg_weapons_full.json    # r/CrucibleGuidebook weapon/perk spec
     data/
@@ -38,12 +39,13 @@ python tools/wishlist/download_manifest.py   # rewrites manifest.content
 ## Regenerating the wishlist
 
 Run from `tools/wishlist/`. Each `resolve_*` script rewrites only its own marked
-section of `../../djsippycup-dim-wishlist.txt`; `add_notes.py` must be run last.
-Generation order matters (each section is appended after the previous one):
+section in place (preserving the other sections), so they can be run in any
+order. `add_notes.py` then applies the title and notes, and
+`reorder_sections.py` puts the PvP sections first. Full rebuild:
 
 ```
 cd tools/wishlist
-python resolve_tier_s_wishlist.py --generate          # PvE (Aegis) section
+python resolve_tier_s_wishlist.py --generate          # PvE (Aegis) section, incl. DECATUR 02
 python resolve_pvp_wishlist.py --generate             # Daltnix PvP section
 python resolve_pvp_wishlist.py --generate \
     --weapons cg_weapons_full.json \
@@ -51,12 +53,16 @@ python resolve_pvp_wishlist.py --generate \
     --begin "// BEGIN GENERATED CRUCIBLEGUIDEBOOK PVP" \
     --end   "// END GENERATED CRUCIBLEGUIDEBOOK PVP"   # CrucibleGuidebook PvP section
 python add_notes.py                                   # title + //notes: source tags
+python reorder_sections.py                            # PvP sections above PvE
 ```
 
-Run without `--generate` to only resolve hashes and print a coverage report.
+This pipeline is idempotent (re-running reproduces the file byte-for-byte). Run
+any `resolve_*` script without `--generate` to only print a coverage report.
 
 ## Conventions
 
+- Section order: PvP (Daltnix, then CrucibleGuidebook) precedes PvE (Tier S,
+  which includes DECATUR 02) so DIM matches PvP first.
 - Comments use `//`; rolls are ordered most-perks-first (DIM applies the first
   matching line).
 - Every item/perk hash is validated against the manifest sockets before use.
@@ -64,3 +70,4 @@ Run without `--generate` to only resolve hashes and print a coverage report.
   the same column, so same-column combinations are included).
 - `//notes:` block notes reset on any blank line or `//` comment, so each
   weapon's rolls are kept contiguous directly under its note.
+

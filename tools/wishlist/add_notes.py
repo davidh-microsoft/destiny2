@@ -8,9 +8,9 @@ DIM resets block notes on every blank line and every // comment, and checks
     dimwishlist:...            (all rolls for this block, contiguous, no blanks)
 
 with a single blank line between blocks. Notes are chosen by section:
-  - DECATUR block + TIER S section  -> "Aegis tags:pve"
-  - PVP WEAPONS section (Daltnix)   -> "Daltnix tags:pvp"
-  - CRUCIBLEGUIDEBOOK section        -> "CrucibleGuidebook tags:pvp"
+  - TIER S section (incl. DECATUR 02) -> "Aegis tags:pve"
+  - PVP WEAPONS section (Daltnix)     -> "Daltnix tags:pvp"
+  - CRUCIBLEGUIDEBOOK section          -> "CrucibleGuidebook tags:pvp"
 """
 from pathlib import Path
 
