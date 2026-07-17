@@ -284,9 +284,9 @@ def generate_wishlist(results, source, begin_marker, end_marker):
         after = ""
     after = after.strip("\n")
 
-    # Deduplicate against every roll outside this section (before and after).
-    outside = before + "\n" + after
-    existing_keys = {roll_key(l) for l in outside.splitlines() if l.startswith("dimwishlist:")}
+    # No cross-section dedup: sections are self-contained. DIM dedups globally
+    # and keeps the first occurrence, so PvP (ordered first) wins over any
+    # identical PvE roll. Only dedup within this section.
     generated_keys = set()
 
     section = [begin_marker, f"// Source: {source}", ""]
@@ -296,7 +296,7 @@ def generate_wishlist(results, source, begin_marker, end_marker):
         for line in block:
             if line.startswith("dimwishlist:"):
                 key = roll_key(line)
-                if key in existing_keys or key in generated_keys:
+                if key in generated_keys:
                     continue
                 generated_keys.add(key)
             filtered.append(line)

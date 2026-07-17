@@ -70,6 +70,7 @@ FIXED_EXOTIC_PERKS = {
 class SheetWeapon:
     tab: str
     sheet_row: int
+    tier: str
     rank: str
     season: str
     name: str
@@ -190,7 +191,8 @@ def read_sheet_weapons() -> list[SheetWeapon]:
             return row[index].strip() if index is not None and index < len(row) else ""
 
         for sheet_row, row in enumerate(rows[2:], start=3):
-            if get(row, "Tier") != "S":
+            tier = get(row, "Tier")
+            if tier not in ("S", "A"):
                 continue
 
             name_lines = split_lines(get(row, "Name"))
@@ -198,6 +200,7 @@ def read_sheet_weapons() -> list[SheetWeapon]:
                 SheetWeapon(
                     tab=tab,
                     sheet_row=sheet_row,
+                    tier=tier,
                     rank=get(row, "Rank"),
                     season=get(row, "Season"),
                     name=name_lines[0],
@@ -386,6 +389,7 @@ def resolve_weapon(weapon, items, items_by_name, plug_sets):
     return {
         "tab": weapon.tab,
         "sheet_row": weapon.sheet_row,
+        "tier": weapon.tier,
         "rank": weapon.rank,
         "season": weapon.season,
         "name": weapon.name,
@@ -491,7 +495,9 @@ def generate_candidate_block(result, candidate):
 
     lines = [
         f"// {result['tab']}: {result['name']}"
-        + (f" ({result['qualifier']})" if result["qualifier"] else ""),
+        + (f" ({result['qualifier']})" if result["qualifier"] else "")
+        + f" [Tier {result['tier']}]",
+        f"// tier: {result['tier']}",
         f"// itemHash={item_hash} ({item_hash_source})",
     ]
 
@@ -518,23 +524,25 @@ def generate_candidate_block(result, candidate):
     lines.append("")
 
     if not supported_perks:
-        fixed_perks = FIXED_EXOTIC_PERKS.get(result["name"])
-        if fixed_perks:
-            fallback_hashes = fixed_perks
-            fallback_name = "fixed intrinsic"
-        elif candidate["fallback_plug"]:
-            fallback_hashes = [candidate["fallback_plug"]["hash"]]
-            fallback_name = candidate["fallback_plug"]["name"]
-        else:
-            raise ValueError(f"No perks available for {result['name']} ({item_hash})")
-        lines.append(
-            f"// no listed perks are available on this item version; "
-            f"matching {fallback_name}={fallback_hashes[0]}"
+        if result["perks"]:
+            # A perked weapon whose listed perks don't roll on THIS version;
+            # other selected versions cover them, so emit no rolls here.
+            lines.append("// no listed perks roll on this item version")
+            lines.append("")
+            return lines
+        # Fixed-roll exotic: match via its intrinsic frame perk.
+        fixed_perks = FIXED_EXOTIC_PERKS.get(result["name"]) or (
+            [candidate["fallback_plug"]["hash"]] if candidate["fallback_plug"] else None
         )
+        if not fixed_perks:
+            lines.append("// no intrinsic available; skipped")
+            lines.append("")
+            return lines
+        lines.append(f"// fixed-roll exotic; matching intrinsic={fixed_perks[0]}")
         lines.append("")
         lines.append(
             f"dimwishlist:item={item_hash}&perks="
-            + ",".join(map(str, fallback_hashes))
+            + ",".join(map(str, fixed_perks))
         )
         lines.append("")
         return lines
@@ -557,37 +565,31 @@ def generate_candidate_block(result, candidate):
 
 
 def validate_selected_results(results):
-    errors = []
+    warnings = []
     for result in results:
         selected = result["selected_candidates"]
         if not selected:
-            errors.append(f"No selected item hash: {result['tab']} / {result['name']}")
+            warnings.append(f"no weapon candidate, skipped: {result['tab']}/{result['name']}")
             continue
 
         if result["linked_item_hash"] and result["linked_item_hash"] not in {
             candidate["hash"] for candidate in selected
         }:
-            errors.append(
-                f"Sheet-linked hash not selected for {result['name']}: "
-                f"{result['linked_item_hash']}"
+            warnings.append(
+                f"sheet-linked hash {result['linked_item_hash']} is not a weapon "
+                f"candidate for {result['name']} (using resolved versions)"
             )
 
         if not result["perks"]:
-            if result["name"] not in FIXED_EXOTIC_PERKS:
-                errors.append(f"No fixed exotic mapping: {result['name']}")
+            if result["name"] not in FIXED_EXOTIC_PERKS and not all(
+                candidate["fallback_plug"] for candidate in selected
+            ):
+                warnings.append(f"fixed exotic with no intrinsic fallback: {result['name']}")
             continue
 
         covered = set()
         for candidate in selected:
             covered.update(candidate["resolved"])
-            supported_perks = [
-                perk for perk in result["perks"] if perk in candidate["resolved"]
-            ]
-            if not supported_perks and not candidate["fallback_plug"]:
-                errors.append(
-                    f"No supported perks for {result['name']} / {candidate['hash']}"
-                )
-
         missing = [
             component
             for component in result["barrels"]
@@ -596,12 +598,12 @@ def validate_selected_results(results):
             if component not in covered
         ]
         if missing:
-            errors.append(
-                f"Selected hashes do not cover {result['name']}: {missing}"
-            )
+            warnings.append(f"perks not on any resolved version of {result['name']}: {missing}")
 
-    if errors:
-        raise ValueError("\n".join(errors))
+    if warnings:
+        print(f"[{len(warnings)} resolution warning(s)]", file=sys.stderr)
+        for warning in warnings:
+            print(f"  WARN {warning}", file=sys.stderr)
 
 
 def roll_key(line):
@@ -631,12 +633,9 @@ def generate_wishlist(results):
         after = ""
     after = after.strip("\n")
 
-    outside = before + "\n" + after
-    existing_roll_keys = {
-        roll_key(line)
-        for line in outside.splitlines()
-        if line.startswith("dimwishlist:")
-    }
+    # No cross-section dedup: sections are self-contained. DIM dedups globally
+    # and keeps the first occurrence, so PvP (ordered first) wins over any
+    # identical PvE roll. Only dedup within this section.
     generated_roll_keys = set()
     block_count = 0
 
@@ -648,7 +647,7 @@ def generate_wishlist(results):
             for line in block:
                 if line.startswith("dimwishlist:"):
                     key = roll_key(line)
-                    if key in existing_roll_keys or key in generated_roll_keys:
+                    if key in generated_roll_keys:
                         continue
                     generated_roll_keys.add(key)
                 filtered_block.append(line)

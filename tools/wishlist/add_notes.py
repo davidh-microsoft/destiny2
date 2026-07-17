@@ -59,6 +59,10 @@ def main():
             current_note = DALTNIX
         elif line.startswith(CG_BEGIN):
             current_note = CG
+        elif line.startswith("// tier:"):
+            # Aegis weapon tier (S/A) -> append #s / #a to the PvE note
+            tier = line.split(":", 1)[1].strip().lower()
+            current_note = f"{AEGIS}#{tier}"
         # skip an existing title line if present (we already added ours)
         if line.startswith("title:"):
             continue

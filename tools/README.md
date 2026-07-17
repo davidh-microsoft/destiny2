@@ -15,7 +15,7 @@ tools/
   wishlist/
     manifest_util.py        # resolves/extracts the manifest DB
     download_manifest.py    # fetches the current manifest from Bungie
-    resolve_tier_s_wishlist.py   # PvE: Tier S weapons from the Endgame Analysis sheet
+    resolve_tier_s_wishlist.py   # PvE: Tier S + Tier A weapons from the Endgame Analysis sheet
     resolve_pvp_wishlist.py      # PvP: Daltnix video + r/CrucibleGuidebook
     add_notes.py            # adds title + per-weapon //notes: source tags
     reorder_sections.py     # moves PvP sections above the PvE (Tier S) section
@@ -61,11 +61,18 @@ any `resolve_*` script without `--generate` to only print a coverage report.
 
 ## Conventions
 
-- Section order: PvP (Daltnix, then CrucibleGuidebook) precedes PvE (Tier S,
-  which includes DECATUR 02) so DIM matches PvP first.
+- Section order: PvP (Daltnix, then CrucibleGuidebook) precedes PvE (the Aegis
+  Tier S + Tier A weapons, which include DECATUR 02) so DIM matches PvP first.
+- Sections are self-contained (no cross-section dedup). DIM dedups globally and
+  keeps the first occurrence, so a roll shared by PvP and PvE is matched as PvP.
+- Notes carry the source and, for PvE, the sheet tier: `Aegis tags:pve#s`
+  (Tier S) or `Aegis tags:pve#a` (Tier A); PvP notes are `Daltnix tags:pvp` /
+  `CrucibleGuidebook tags:pvp`.
 - Comments use `//`; rolls are ordered most-perks-first (DIM applies the first
   matching line).
-- Every item/perk hash is validated against the manifest sockets before use.
+- Every item/perk hash is validated against the manifest sockets before use;
+  perks that don't roll on a version are dropped, and fixed-roll exotics match
+  via their intrinsic. Resolution edge cases are printed as warnings.
 - Entries cover every non-empty perk subset (a weapon can roll multiple perks in
   the same column, so same-column combinations are included).
 - `//notes:` block notes reset on any blank line or `//` comment, so each
