@@ -44610,3 +44610,770 @@ dimwishlist:item=649691506&perks=2551157718
 dimwishlist:item=3580904581&perks=1210807262
 
 // END GENERATED TIER S WEAPONS
+
+// BEGIN GENERATED PVP WEAPONS
+// Source: Daltnix - 'The 20 BEST Weapons For PVP In Destiny 2 Forever and Always (God Roll Guide)', published 2026-06-20 (post Monument of Triumph)
+
+// #1 Hawkmoon
+// itemHash=3856705927 (exotic, random rolls)
+// perks: Opening Shot=47981717; Rangefinder=2846385770; Moving Target=588594999; Eye of the Storm=699525795
+
+dimwishlist:item=3856705927&perks=47981717
+
+dimwishlist:item=3856705927&perks=2846385770
+
+dimwishlist:item=3856705927&perks=588594999
+
+dimwishlist:item=3856705927&perks=699525795
+
+// #2 The Martlet
+// itemHash=877384
+// perks: Headseeker=460017080; Lone Wolf=2579169598; Keep Away=3619207468; Sword Logic=31345821; Kill Clip=1015611457; Desperado=3047969693; Zen Moment=2387244414
+
+dimwishlist:item=877384&perks=460017080,31345821
+
+dimwishlist:item=877384&perks=460017080,1015611457
+
+dimwishlist:item=877384&perks=460017080,3047969693
+
+dimwishlist:item=877384&perks=460017080,2387244414
+
+dimwishlist:item=877384&perks=2579169598,31345821
+
+dimwishlist:item=877384&perks=2579169598,1015611457
+
+dimwishlist:item=877384&perks=2579169598,3047969693
+
+dimwishlist:item=877384&perks=2579169598,2387244414
+
+dimwishlist:item=877384&perks=3619207468,31345821
+
+dimwishlist:item=877384&perks=3619207468,1015611457
+
+dimwishlist:item=877384&perks=3619207468,3047969693
+
+dimwishlist:item=877384&perks=3619207468,2387244414
+
+dimwishlist:item=877384&perks=460017080
+
+dimwishlist:item=877384&perks=2579169598
+
+dimwishlist:item=877384&perks=3619207468
+
+dimwishlist:item=877384&perks=31345821
+
+dimwishlist:item=877384&perks=1015611457
+
+dimwishlist:item=877384&perks=3047969693
+
+dimwishlist:item=877384&perks=2387244414
+
+// #3 Spare Rations
+// itemHash=810474119
+// perks: Slideshot=3161816588; Rapid Hit=247725512; Moving Target=588594999; Keep Away=3619207468; Opening Shot=47981717; Eye of the Storm=699525795; Explosive Payload=3038247973
+
+dimwishlist:item=810474119&perks=3161816588,47981717
+
+dimwishlist:item=810474119&perks=3161816588,699525795
+
+dimwishlist:item=810474119&perks=3161816588,3038247973
+
+dimwishlist:item=810474119&perks=247725512,47981717
+
+dimwishlist:item=810474119&perks=247725512,699525795
+
+dimwishlist:item=810474119&perks=247725512,3038247973
+
+dimwishlist:item=810474119&perks=588594999,47981717
+
+dimwishlist:item=810474119&perks=588594999,699525795
+
+dimwishlist:item=810474119&perks=588594999,3038247973
+
+dimwishlist:item=810474119&perks=3619207468,47981717
+
+dimwishlist:item=810474119&perks=3619207468,699525795
+
+dimwishlist:item=810474119&perks=3619207468,3038247973
+
+dimwishlist:item=810474119&perks=3161816588
+
+dimwishlist:item=810474119&perks=247725512
+
+dimwishlist:item=810474119&perks=588594999
+
+dimwishlist:item=810474119&perks=3619207468
+
+dimwishlist:item=810474119&perks=47981717
+
+dimwishlist:item=810474119&perks=699525795
+
+dimwishlist:item=810474119&perks=3038247973
+
+// #4 Voltaic Shade
+// itemHash=71057630
+// perks: Delicate Tuning=307683764; Rapid Hit=247725512; Keep Away=3619207468; Precision Instrument=555281244
+
+dimwishlist:item=71057630&perks=307683764,555281244
+
+dimwishlist:item=71057630&perks=247725512,555281244
+
+dimwishlist:item=71057630&perks=3619207468,555281244
+
+dimwishlist:item=71057630&perks=307683764
+
+dimwishlist:item=71057630&perks=247725512
+
+dimwishlist:item=71057630&perks=3619207468
+
+dimwishlist:item=71057630&perks=555281244
+
+// #5 Igneous Hammer
+// itemHash=2776092652
+// perks: Rapid Hit=247725512; Keep Away=3619207468; Moving Target=588594999; Slideshot=3161816588; Lone Wolf=2579169598; Opening Shot=47981717; Eye of the Storm=699525795; Precision Instrument=555281244
+
+dimwishlist:item=2776092652&perks=247725512,47981717
+
+dimwishlist:item=2776092652&perks=247725512,699525795
+
+dimwishlist:item=2776092652&perks=247725512,555281244
+
+dimwishlist:item=2776092652&perks=3619207468,47981717
+
+dimwishlist:item=2776092652&perks=3619207468,699525795
+
+dimwishlist:item=2776092652&perks=3619207468,555281244
+
+dimwishlist:item=2776092652&perks=588594999,47981717
+
+dimwishlist:item=2776092652&perks=588594999,699525795
+
+dimwishlist:item=2776092652&perks=588594999,555281244
+
+dimwishlist:item=2776092652&perks=3161816588,47981717
+
+dimwishlist:item=2776092652&perks=3161816588,699525795
+
+dimwishlist:item=2776092652&perks=3161816588,555281244
+
+dimwishlist:item=2776092652&perks=2579169598,47981717
+
+dimwishlist:item=2776092652&perks=2579169598,699525795
+
+dimwishlist:item=2776092652&perks=2579169598,555281244
+
+dimwishlist:item=2776092652&perks=247725512
+
+dimwishlist:item=2776092652&perks=3619207468
+
+dimwishlist:item=2776092652&perks=588594999
+
+dimwishlist:item=2776092652&perks=3161816588
+
+dimwishlist:item=2776092652&perks=2579169598
+
+dimwishlist:item=2776092652&perks=47981717
+
+dimwishlist:item=2776092652&perks=699525795
+
+dimwishlist:item=2776092652&perks=555281244
+
+// #6 Everburning Glitz
+// itemHash=2857870254
+// perks: Lone Wolf=2579169598; Dynamic Sway Reduction=1359896290; Kinetic Tremors=3891536761; Tap the Trigger=1890422124; Zen Moment=2387244414
+
+dimwishlist:item=2857870254&perks=2579169598,3891536761
+
+dimwishlist:item=2857870254&perks=2579169598,1890422124
+
+dimwishlist:item=2857870254&perks=2579169598,2387244414
+
+dimwishlist:item=2857870254&perks=1359896290,3891536761
+
+dimwishlist:item=2857870254&perks=1359896290,1890422124
+
+dimwishlist:item=2857870254&perks=1359896290,2387244414
+
+dimwishlist:item=2857870254&perks=2579169598
+
+dimwishlist:item=2857870254&perks=1359896290
+
+dimwishlist:item=2857870254&perks=3891536761
+
+dimwishlist:item=2857870254&perks=1890422124
+
+dimwishlist:item=2857870254&perks=2387244414
+
+// #7 Shayura's Wrath
+// itemHash=3747667917
+// perks: Dynamic Sway Reduction=1359896290; Keep Away=3619207468; Zen Moment=2387244414; Lone Wolf=2579169598; Tap the Trigger=1890422124; Kill Clip=1015611457; Target Lock=365154968; Master of Arms=3081867624; Rangefinder=2846385770
+
+dimwishlist:item=3747667917&perks=1359896290,1890422124
+
+dimwishlist:item=3747667917&perks=1359896290,1015611457
+
+dimwishlist:item=3747667917&perks=1359896290,365154968
+
+dimwishlist:item=3747667917&perks=1359896290,3081867624
+
+dimwishlist:item=3747667917&perks=1359896290,2846385770
+
+dimwishlist:item=3747667917&perks=3619207468,1890422124
+
+dimwishlist:item=3747667917&perks=3619207468,1015611457
+
+dimwishlist:item=3747667917&perks=3619207468,365154968
+
+dimwishlist:item=3747667917&perks=3619207468,3081867624
+
+dimwishlist:item=3747667917&perks=3619207468,2846385770
+
+dimwishlist:item=3747667917&perks=2387244414,1890422124
+
+dimwishlist:item=3747667917&perks=2387244414,1015611457
+
+dimwishlist:item=3747667917&perks=2387244414,365154968
+
+dimwishlist:item=3747667917&perks=2387244414,3081867624
+
+dimwishlist:item=3747667917&perks=2387244414,2846385770
+
+dimwishlist:item=3747667917&perks=2579169598,1890422124
+
+dimwishlist:item=3747667917&perks=2579169598,1015611457
+
+dimwishlist:item=3747667917&perks=2579169598,365154968
+
+dimwishlist:item=3747667917&perks=2579169598,3081867624
+
+dimwishlist:item=3747667917&perks=2579169598,2846385770
+
+dimwishlist:item=3747667917&perks=1359896290
+
+dimwishlist:item=3747667917&perks=3619207468
+
+dimwishlist:item=3747667917&perks=2387244414
+
+dimwishlist:item=3747667917&perks=2579169598
+
+dimwishlist:item=3747667917&perks=1890422124
+
+dimwishlist:item=3747667917&perks=1015611457
+
+dimwishlist:item=3747667917&perks=365154968
+
+dimwishlist:item=3747667917&perks=3081867624
+
+dimwishlist:item=3747667917&perks=2846385770
+
+// #8 The Inquisitor
+// itemHash=1185633760
+// perks: Lone Wolf=2579169598; Slideshot=3161816588; Threat Detector=4071163871; Closing Time=1194056669; Opening Shot=47981717
+
+dimwishlist:item=1185633760&perks=2579169598,1194056669
+
+dimwishlist:item=1185633760&perks=2579169598,47981717
+
+dimwishlist:item=1185633760&perks=3161816588,1194056669
+
+dimwishlist:item=1185633760&perks=3161816588,47981717
+
+dimwishlist:item=1185633760&perks=4071163871,1194056669
+
+dimwishlist:item=1185633760&perks=4071163871,47981717
+
+dimwishlist:item=1185633760&perks=2579169598
+
+dimwishlist:item=1185633760&perks=3161816588
+
+dimwishlist:item=1185633760&perks=4071163871
+
+dimwishlist:item=1185633760&perks=1194056669
+
+dimwishlist:item=1185633760&perks=47981717
+
+// itemHash=51129316 (alternate item version)
+// perks: Lone Wolf=2579169598; Slideshot=3161816588; Threat Detector=4071163871; Closing Time=1194056669; Opening Shot=47981717
+
+dimwishlist:item=51129316&perks=2579169598,1194056669
+
+dimwishlist:item=51129316&perks=2579169598,47981717
+
+dimwishlist:item=51129316&perks=3161816588,1194056669
+
+dimwishlist:item=51129316&perks=3161816588,47981717
+
+dimwishlist:item=51129316&perks=4071163871,1194056669
+
+dimwishlist:item=51129316&perks=4071163871,47981717
+
+dimwishlist:item=51129316&perks=2579169598
+
+dimwishlist:item=51129316&perks=3161816588
+
+dimwishlist:item=51129316&perks=4071163871
+
+dimwishlist:item=51129316&perks=1194056669
+
+dimwishlist:item=51129316&perks=47981717
+
+// #9 M-17 "Fast Talker"
+// itemHash=2770035786
+// perks: Dynamic Sway Reduction=1359896290; Delicate Tuning=307683764; Killing Wind=2450788523; Target Lock=365154968; Kill Clip=1015611457; Tap the Trigger=1890422124; Master of Arms=3081867624
+
+dimwishlist:item=2770035786&perks=1359896290,365154968
+
+dimwishlist:item=2770035786&perks=1359896290,1015611457
+
+dimwishlist:item=2770035786&perks=1359896290,1890422124
+
+dimwishlist:item=2770035786&perks=1359896290,3081867624
+
+dimwishlist:item=2770035786&perks=307683764,365154968
+
+dimwishlist:item=2770035786&perks=307683764,1015611457
+
+dimwishlist:item=2770035786&perks=307683764,1890422124
+
+dimwishlist:item=2770035786&perks=307683764,3081867624
+
+dimwishlist:item=2770035786&perks=2450788523,365154968
+
+dimwishlist:item=2770035786&perks=2450788523,1015611457
+
+dimwishlist:item=2770035786&perks=2450788523,1890422124
+
+dimwishlist:item=2770035786&perks=2450788523,3081867624
+
+dimwishlist:item=2770035786&perks=1359896290
+
+dimwishlist:item=2770035786&perks=307683764
+
+dimwishlist:item=2770035786&perks=2450788523
+
+dimwishlist:item=2770035786&perks=365154968
+
+dimwishlist:item=2770035786&perks=1015611457
+
+dimwishlist:item=2770035786&perks=1890422124
+
+dimwishlist:item=2770035786&perks=3081867624
+
+// itemHash=1419158093 (alternate item version)
+// perks: Dynamic Sway Reduction=1359896290; Delicate Tuning=307683764; Killing Wind=2450788523; Target Lock=365154968; Kill Clip=1015611457; Tap the Trigger=1890422124; Master of Arms=3081867624
+
+dimwishlist:item=1419158093&perks=1359896290,365154968
+
+dimwishlist:item=1419158093&perks=1359896290,1015611457
+
+dimwishlist:item=1419158093&perks=1359896290,1890422124
+
+dimwishlist:item=1419158093&perks=1359896290,3081867624
+
+dimwishlist:item=1419158093&perks=307683764,365154968
+
+dimwishlist:item=1419158093&perks=307683764,1015611457
+
+dimwishlist:item=1419158093&perks=307683764,1890422124
+
+dimwishlist:item=1419158093&perks=307683764,3081867624
+
+dimwishlist:item=1419158093&perks=2450788523,365154968
+
+dimwishlist:item=1419158093&perks=2450788523,1015611457
+
+dimwishlist:item=1419158093&perks=2450788523,1890422124
+
+dimwishlist:item=1419158093&perks=2450788523,3081867624
+
+dimwishlist:item=1419158093&perks=1359896290
+
+dimwishlist:item=1419158093&perks=307683764
+
+dimwishlist:item=1419158093&perks=2450788523
+
+dimwishlist:item=1419158093&perks=365154968
+
+dimwishlist:item=1419158093&perks=1015611457
+
+dimwishlist:item=1419158093&perks=1890422124
+
+dimwishlist:item=1419158093&perks=3081867624
+
+// #10 The Last Word
+// itemHash=1364093401 (exotic, fixed roll)
+dimwishlist:item=1364093401&perks=2770223582
+
+// #11 High Tyrant
+// itemHash=2873508409
+// perks: Delicate Tuning=307683764; Rapid Hit=247725512; Master of Arms=3081867624; Headseeker=460017080
+
+dimwishlist:item=2873508409&perks=307683764,3081867624
+
+dimwishlist:item=2873508409&perks=307683764,460017080
+
+dimwishlist:item=2873508409&perks=247725512,3081867624
+
+dimwishlist:item=2873508409&perks=247725512,460017080
+
+dimwishlist:item=2873508409&perks=307683764
+
+dimwishlist:item=2873508409&perks=247725512
+
+dimwishlist:item=2873508409&perks=3081867624
+
+dimwishlist:item=2873508409&perks=460017080
+
+// #12 Ace of Spades
+// itemHash=347366834 (exotic, fixed roll)
+dimwishlist:item=347366834&perks=647617635
+
+// #13 Redrix's Estoc
+// itemHash=747743636
+// perks: Lone Wolf=2579169598; Zen Moment=2387244414; Headseeker=460017080; Kill Clip=1015611457; Elemental Honing=1089671869
+
+dimwishlist:item=747743636&perks=2579169598,460017080
+
+dimwishlist:item=747743636&perks=2579169598,1015611457
+
+dimwishlist:item=747743636&perks=2579169598,1089671869
+
+dimwishlist:item=747743636&perks=2387244414,460017080
+
+dimwishlist:item=747743636&perks=2387244414,1015611457
+
+dimwishlist:item=747743636&perks=2387244414,1089671869
+
+dimwishlist:item=747743636&perks=2579169598
+
+dimwishlist:item=747743636&perks=2387244414
+
+dimwishlist:item=747743636&perks=460017080
+
+dimwishlist:item=747743636&perks=1015611457
+
+dimwishlist:item=747743636&perks=1089671869
+
+// #14 Modified B-7 Pistol
+// itemHash=1872906663
+// perks: Keep Away=3619207468; Delicate Tuning=307683764; Eye of the Storm=699525795; Opening Shot=47981717
+
+dimwishlist:item=1872906663&perks=3619207468,699525795
+
+dimwishlist:item=1872906663&perks=3619207468,47981717
+
+dimwishlist:item=1872906663&perks=307683764,699525795
+
+dimwishlist:item=1872906663&perks=307683764,47981717
+
+dimwishlist:item=1872906663&perks=3619207468
+
+dimwishlist:item=1872906663&perks=307683764
+
+dimwishlist:item=1872906663&perks=699525795
+
+dimwishlist:item=1872906663&perks=47981717
+
+// itemHash=3146657388 (alternate item version)
+// perks: Keep Away=3619207468; Delicate Tuning=307683764; Eye of the Storm=699525795; Opening Shot=47981717
+
+dimwishlist:item=3146657388&perks=3619207468,699525795
+
+dimwishlist:item=3146657388&perks=3619207468,47981717
+
+dimwishlist:item=3146657388&perks=307683764,699525795
+
+dimwishlist:item=3146657388&perks=307683764,47981717
+
+dimwishlist:item=3146657388&perks=3619207468
+
+dimwishlist:item=3146657388&perks=307683764
+
+dimwishlist:item=3146657388&perks=699525795
+
+dimwishlist:item=3146657388&perks=47981717
+
+// #15 The Jade Rabbit
+// itemHash=3844694310 (exotic, fixed roll)
+dimwishlist:item=3844694310&perks=3668782036
+
+// #16 No Hesitation
+// itemHash=1801007332
+// perks: Physic=2980589453; Circle of Life=2298656195
+
+dimwishlist:item=1801007332&perks=2980589453,2298656195
+
+
+dimwishlist:item=1801007332&perks=2298656195
+
+// #17 Triple Laureate
+// itemHash=2908653246
+// perks: Rangefinder=2846385770; Opening Shot=47981717; Trench Barrel=2360754333; One-Two Punch=2679249093
+
+dimwishlist:item=2908653246&perks=2846385770,47981717
+
+dimwishlist:item=2908653246&perks=2846385770,2360754333
+
+dimwishlist:item=2908653246&perks=2846385770,2679249093
+
+dimwishlist:item=2908653246&perks=2846385770
+
+dimwishlist:item=2908653246&perks=47981717
+
+dimwishlist:item=2908653246&perks=2360754333
+
+dimwishlist:item=2908653246&perks=2679249093
+
+// itemHash=1605599021 (alternate item version)
+// perks: Rangefinder=2846385770; Opening Shot=47981717; Trench Barrel=2360754333; One-Two Punch=2679249093
+
+dimwishlist:item=1605599021&perks=2846385770,47981717
+
+dimwishlist:item=1605599021&perks=2846385770,2360754333
+
+dimwishlist:item=1605599021&perks=2846385770,2679249093
+
+dimwishlist:item=1605599021&perks=2846385770
+
+dimwishlist:item=1605599021&perks=47981717
+
+dimwishlist:item=1605599021&perks=2360754333
+
+dimwishlist:item=1605599021&perks=2679249093
+
+// #18 Eyasluna
+// itemHash=386864872
+// perks: Zen Moment=2387244414; Slideshot=3161816588; Rangefinder=2846385770; Moving Target=588594999; Precision Instrument=555281244
+
+dimwishlist:item=386864872&perks=2387244414,588594999
+
+dimwishlist:item=386864872&perks=2387244414,555281244
+
+dimwishlist:item=386864872&perks=3161816588,588594999
+
+dimwishlist:item=386864872&perks=3161816588,555281244
+
+dimwishlist:item=386864872&perks=2846385770,588594999
+
+dimwishlist:item=386864872&perks=2846385770,555281244
+
+dimwishlist:item=386864872&perks=2387244414
+
+dimwishlist:item=386864872&perks=3161816588
+
+dimwishlist:item=386864872&perks=2846385770
+
+dimwishlist:item=386864872&perks=588594999
+
+dimwishlist:item=386864872&perks=555281244
+
+// #19 Felwinter's Lie
+// itemHash=218787950
+// perks: Slideshot=3161816588; Lone Wolf=2579169598; Threat Detector=4071163871; Opening Shot=47981717; Iron Reach=591790007; Closing Time=1194056669
+
+dimwishlist:item=218787950&perks=3161816588,47981717
+
+dimwishlist:item=218787950&perks=3161816588,591790007
+
+dimwishlist:item=218787950&perks=3161816588,1194056669
+
+dimwishlist:item=218787950&perks=2579169598,47981717
+
+dimwishlist:item=218787950&perks=2579169598,591790007
+
+dimwishlist:item=218787950&perks=2579169598,1194056669
+
+dimwishlist:item=218787950&perks=4071163871,47981717
+
+dimwishlist:item=218787950&perks=4071163871,591790007
+
+dimwishlist:item=218787950&perks=4071163871,1194056669
+
+dimwishlist:item=218787950&perks=3161816588
+
+dimwishlist:item=218787950&perks=2579169598
+
+dimwishlist:item=218787950&perks=4071163871
+
+dimwishlist:item=218787950&perks=47981717
+
+dimwishlist:item=218787950&perks=591790007
+
+dimwishlist:item=218787950&perks=1194056669
+
+// #20 Vex Mythoclast
+// itemHash=4289226715 (exotic, fixed roll)
+dimwishlist:item=4289226715&perks=3610750208
+
+// END GENERATED PVP WEAPONS
+
+// BEGIN GENERATED CRUCIBLEGUIDEBOOK PVP
+// Source: r/CrucibleGuidebook recent recommendations (July 2026, post Monument of Triumph): threads 'Destiny 2 final PvP meta', 'this is the final meta', 'Best hand cannons?', 'The best sniper rifle for PvP?'. Only perks explicitly named by commenters are included.
+
+// #1 Rose
+// itemHash=1041028434
+// perks: Slideshot=3161816588; Rangefinder=2846385770; Precision Instrument=555281244; Magnificent Howl=2720533289; Opening Shot=47981717; Explosive Payload=3038247973
+
+dimwishlist:item=1041028434&perks=3161816588,2846385770
+
+dimwishlist:item=1041028434&perks=3161816588,555281244
+
+dimwishlist:item=1041028434&perks=3161816588,2720533289
+
+dimwishlist:item=1041028434&perks=3161816588,47981717
+
+dimwishlist:item=1041028434&perks=3161816588,3038247973
+
+dimwishlist:item=1041028434&perks=3161816588
+
+dimwishlist:item=1041028434&perks=2846385770
+
+dimwishlist:item=1041028434&perks=555281244
+
+dimwishlist:item=1041028434&perks=2720533289
+
+dimwishlist:item=1041028434&perks=47981717
+
+dimwishlist:item=1041028434&perks=3038247973
+
+// #2 Austringer
+// itemHash=2429822977
+// perks: Zen Moment=2387244414; Eye of the Storm=699525795; Opening Shot=47981717
+
+dimwishlist:item=2429822977&perks=699525795,2387244414
+
+dimwishlist:item=2429822977&perks=699525795,47981717
+
+dimwishlist:item=2429822977&perks=699525795
+
+dimwishlist:item=2429822977&perks=2387244414
+
+dimwishlist:item=2429822977&perks=47981717
+
+// itemHash=3055790362 (alternate item version)
+// perks: Zen Moment=2387244414; Eye of the Storm=699525795; Opening Shot=47981717
+
+dimwishlist:item=3055790362&perks=699525795,2387244414
+
+dimwishlist:item=3055790362&perks=699525795,47981717
+
+dimwishlist:item=3055790362&perks=699525795
+
+dimwishlist:item=3055790362&perks=2387244414
+
+dimwishlist:item=3055790362&perks=47981717
+
+// #3 Solemn Remembrance
+// itemHash=4116518582
+// perks: Lone Wolf=2579169598; Keep Away=3619207468
+
+dimwishlist:item=4116518582&perks=2579169598,3619207468
+
+dimwishlist:item=4116518582&perks=2579169598
+
+dimwishlist:item=4116518582&perks=3619207468
+
+// #4 The Palindrome
+// itemHash=3303271523
+// perks: Explosive Payload=3038247973; Opening Shot=47981717
+
+dimwishlist:item=3303271523&perks=3038247973,47981717
+
+dimwishlist:item=3303271523&perks=3038247973
+
+dimwishlist:item=3303271523&perks=47981717
+
+// itemHash=739029152 (alternate item version)
+// perks: Explosive Payload=3038247973; Opening Shot=47981717
+
+dimwishlist:item=739029152&perks=3038247973,47981717
+
+dimwishlist:item=739029152&perks=3038247973
+
+dimwishlist:item=739029152&perks=47981717
+
+// itemHash=2876244791 (alternate item version)
+// perks: Explosive Payload=3038247973; Opening Shot=47981717
+
+dimwishlist:item=2876244791&perks=3038247973,47981717
+
+dimwishlist:item=2876244791&perks=3038247973
+
+dimwishlist:item=2876244791&perks=47981717
+
+// #5 Luna's Howl
+// itemHash=2033531688
+// perks: Slideshot=3161816588; Opening Shot=47981717
+
+dimwishlist:item=2033531688&perks=3161816588,47981717
+
+dimwishlist:item=2033531688&perks=3161816588
+
+dimwishlist:item=2033531688&perks=47981717
+
+// itemHash=3757612024 (alternate item version)
+// perks: Slideshot=3161816588; Opening Shot=47981717
+
+dimwishlist:item=3757612024&perks=3161816588,47981717
+
+dimwishlist:item=3757612024&perks=3161816588
+
+dimwishlist:item=3757612024&perks=47981717
+
+// itemHash=2763843899 (alternate item version)
+// perks: Slideshot=3161816588; Opening Shot=47981717
+
+dimwishlist:item=2763843899&perks=3161816588,47981717
+
+dimwishlist:item=2763843899&perks=3161816588
+
+dimwishlist:item=2763843899&perks=47981717
+
+// #6 Corundum Hammer
+// itemHash=2263462407
+// perks: Slideshot=3161816588; Precision Instrument=555281244
+
+dimwishlist:item=2263462407&perks=3161816588,555281244
+
+dimwishlist:item=2263462407&perks=3161816588
+
+dimwishlist:item=2263462407&perks=555281244
+
+// #7 Kept Confidence
+// itemHash=1875512595
+// perks: Killing Wind=2450788523; Eye of the Storm=699525795
+
+dimwishlist:item=1875512595&perks=2450788523,699525795
+
+dimwishlist:item=1875512595&perks=2450788523
+
+dimwishlist:item=1875512595&perks=699525795
+
+// #8 Adored
+// itemHash=891765152
+// perks: Lone Wolf=2579169598; Opening Shot=47981717
+
+dimwishlist:item=891765152&perks=2579169598,47981717
+
+dimwishlist:item=891765152&perks=2579169598
+
+dimwishlist:item=891765152&perks=47981717
+
+// itemHash=1405095983 (alternate item version)
+// perks: Lone Wolf=2579169598; Opening Shot=47981717
+
+dimwishlist:item=1405095983&perks=2579169598,47981717
+
+dimwishlist:item=1405095983&perks=2579169598
+
+dimwishlist:item=1405095983&perks=47981717
+
+// #9 MIDA Multi-Tool
+// itemHash=1331482397 (exotic, fixed roll)
+dimwishlist:item=1331482397&perks=377257911
+
+// #10 Cloudstrike
+// itemHash=2603483885 (exotic, fixed roll)
+dimwishlist:item=2603483885&perks=2909403175
+
+// END GENERATED CRUCIBLEGUIDEBOOK PVP
