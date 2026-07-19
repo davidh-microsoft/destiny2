@@ -1,5 +1,5 @@
 {
-  "source": "r/CrucibleGuidebook recent recommendations (June-July 2026, post Monument of Triumph). Threads: final PvP meta, this is the final meta, Best hand cannons, best sniper, Top 10 primaries god rolls, Godroll guide/tierlist, Iron Banner god rolls, best weapons each type, Solemn Remembrance/Rose/Spare/Crimil's/Solemn Lie god roll threads, Null Composure, Messenger, best snipers, best fusions, fastest sidearm, submission, 1000 Yard Stare. Only perks named by commenters are included; perks not in a weapon's manifest sockets are dropped automatically.",
+  "source": "r/CrucibleGuidebook recent recommendations (June-July 2026, post Monument of Triumph). Threads: final PvP meta, this is the final meta, Best hand cannons, best sniper, Top 10 primaries god rolls, Godroll guide/tierlist, Iron Banner god rolls, best weapons each type, Solemn Remembrance/Rose/Spare/Crimil's/Solemn Lie god roll threads, Null Composure, Messenger, best snipers, best fusions, fastest sidearm, submission, 1000 Yard Stare, Randy's Throwing Knife (Precision Instrument / Kinetic Tremors current-version rolls). Only perks named by commenters are included; perks not in a weapon's manifest sockets are dropped automatically.",
   "weapons": [
     {"rank": 1, "name": "Rose", "columns": [["Slideshot", "Keep Away", "Rapid Hit", "Moving Target", "Precision Instrument", "Eye of the Storm", "Explosive Payload", "Opening Shot", "Rangefinder", "Magnificent Howl"]]},
     {"rank": 2, "name": "Solemn Remembrance", "columns": [["Zen Moment", "Lone Wolf", "Moving Target", "Slideshot", "Keep Away", "Eye of the Storm", "Precision Instrument", "Magnificent Howl", "Firefly"]]},
@@ -34,8 +34,9 @@
     {"rank": 31, "name": "Keen Thistle", "columns": [["Under Pressure", "Closing Time", "Opening Shot"]]},
     {"rank": 32, "name": "ALLEN 05", "columns": [["Lone Wolf", "Moving Target", "Precision Instrument"]]},
     {"rank": 33, "name": "Fortissimo-11", "columns": [["Lone Wolf", "Threat Detector", "Opening Shot", "Closing Time"]]},
-    {"rank": 34, "name": "MIDA Multi-Tool", "exotic": true, "random": false},
-    {"rank": 35, "name": "Cloudstrike", "exotic": true, "random": false},
-    {"rank": 36, "name": "Red Death Reformed", "exotic": true, "random": false}
+    {"rank": 34, "name": "Randy's Throwing Knife", "columns": [["Zen Moment", "Rapid Hit", "Precision Instrument", "Kinetic Tremors", "Kill Clip"]]},
+    {"rank": 35, "name": "MIDA Multi-Tool", "exotic": true, "random": false},
+    {"rank": 36, "name": "Cloudstrike", "exotic": true, "random": false},
+    {"rank": 37, "name": "Red Death Reformed", "exotic": true, "random": false}
   ]
 }
