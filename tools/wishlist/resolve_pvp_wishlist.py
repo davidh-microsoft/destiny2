@@ -140,6 +140,8 @@ def resolve_perk(perk_name, perk_maps):
 def resolve_weapon(weapon, items, items_by_name, plugsets):
     columns = weapon.get("columns") or []
     all_perks = [p for col in columns for p in col]
+    barrels = weapon.get("barrels") or []
+    magazines = weapon.get("magazines") or []
     candidates = []
     for cand in candidate_weapons(weapon["name"], items_by_name):
         pmaps = socket_perk_maps(cand, items, plugsets)
@@ -151,6 +153,16 @@ def resolve_weapon(weapon, items, items_by_name, plugsets):
                 resolved[perk] = {"hashes": hashes, "sockets": sockets}
             else:
                 missing.append(perk)
+        resolved_barrels = {}
+        for barrel in barrels:
+            hashes, sockets = resolve_perk(barrel, pmaps)
+            if hashes:
+                resolved_barrels[barrel] = {"hashes": hashes, "sockets": sockets}
+        resolved_magazines = {}
+        for magazine in magazines:
+            hashes, sockets = resolve_perk(magazine, pmaps)
+            if hashes:
+                resolved_magazines[magazine] = {"hashes": hashes, "sockets": sockets}
         candidates.append({
             "hash": cand["hash"],
             "index": cand.get("index"),
@@ -158,6 +170,8 @@ def resolve_weapon(weapon, items, items_by_name, plugsets):
             "coverage": len(all_perks) - len(missing),
             "missing": missing,
             "resolved": resolved,
+            "resolved_barrels": resolved_barrels,
+            "resolved_magazines": resolved_magazines,
             "intrinsic": intrinsic_hash(cand, items, plugsets),
             "typeName": cand.get("itemTypeDisplayName"),
         })
@@ -177,6 +191,8 @@ def resolve_weapon(weapon, items, items_by_name, plugsets):
         "exotic": weapon.get("exotic", False),
         "random": bool(weapon.get("columns")) and weapon.get("random", True),
         "columns": columns,
+        "barrels": barrels,
+        "magazines": magazines,
         "candidate_count": len(candidates),
         "selected": selected,
         "candidates": candidates,
@@ -195,6 +211,27 @@ def perk_subset_hash_lists(perk_names, resolved):
     groups = [resolved[name]["hashes"] for name in perk_names]
     for combo in itertools.product(*groups):
         yield dedupe(list(combo))
+
+
+def roll_variants(barrel_hashes, magazine_hashes):
+    """Optional barrel/mag prefixes as [both, mag, barrel, neither], most first.
+
+    Barrel and magazine are each optionally present, so a weapon matches whether
+    or not it rolled the listed barrel/mag. Empty inputs yield a single empty
+    prefix, so weapons without barrel/mag specs are unaffected.
+    """
+    import itertools
+    groups = [[None] + list(barrel_hashes), [None] + list(magazine_hashes)]
+    seen = set()
+    variants = []
+    for combo in itertools.product(*groups):
+        chosen = [c for c in combo if c is not None]
+        key = tuple(chosen)
+        if key not in seen:
+            seen.add(key)
+            variants.append(chosen)
+    variants.sort(key=lambda v: -len(v))
+    return variants
 
 
 def column_perk_combos(columns, resolved):
@@ -246,6 +283,17 @@ def generate_weapon_block(result):
     for position, cand in enumerate(result["selected"]):
         resolved = cand["resolved"]
         supported = [p for p in all_perks if p in resolved]
+        resolved_barrels = cand.get("resolved_barrels") or {}
+        resolved_magazines = cand.get("resolved_magazines") or {}
+        supported_barrels = [b for b in result.get("barrels", []) if b in resolved_barrels]
+        supported_magazines = [m for m in result.get("magazines", []) if m in resolved_magazines]
+        barrel_hashes = dedupe(
+            [h for b in supported_barrels for h in resolved_barrels[b]["hashes"]]
+        )
+        magazine_hashes = dedupe(
+            [h for m in supported_magazines for h in resolved_magazines[m]["hashes"]]
+        )
+        variants = roll_variants(barrel_hashes, magazine_hashes)
         label = f"// itemHash={cand['hash']}"
         if result["exotic"]:
             label += " (exotic, random rolls)"
@@ -256,16 +304,30 @@ def generate_weapon_block(result):
             f"{p}={'|'.join(map(str, resolved[p]['hashes']))}" for p in supported
         )
         lines.append(f"// perks: {perk_summary}")
+        if supported_barrels:
+            lines.append("// barrels: " + "; ".join(
+                f"{b}={'|'.join(map(str, resolved_barrels[b]['hashes']))}"
+                for b in supported_barrels
+            ))
+        if supported_magazines:
+            lines.append("// magazines: " + "; ".join(
+                f"{m}={'|'.join(map(str, resolved_magazines[m]['hashes']))}"
+                for m in supported_magazines
+            ))
         lines.append("")
         # Every non-empty subset of the recommended perks, most-perks-first, so
         # DIM (first match wins) flags the fullest combination present. This
         # matches the PvE "all combinations (individual and combined)" rule.
+        # Optional barrel/mag are added as prefix variants (with/without); every
+        # roll keeps at least one trait perk so no barrel/mag-only junk matches.
         for size in range(len(supported), 0, -1):
             for names in _combinations(supported, size):
                 for hash_list in perk_subset_hash_lists(names, resolved):
-                    lines.append(
-                        f"dimwishlist:item={cand['hash']}&perks=" + ",".join(map(str, hash_list))
-                    )
+                    for prefix in variants:
+                        combined = dedupe(list(prefix) + list(hash_list))
+                        lines.append(
+                            f"dimwishlist:item={cand['hash']}&perks=" + ",".join(map(str, combined))
+                        )
             lines.append("")
     return lines
 

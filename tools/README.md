@@ -75,6 +75,10 @@ any `resolve_*` script without `--generate` to only print a coverage report.
   via their intrinsic. Resolution edge cases are printed as warnings.
 - Entries cover every non-empty perk subset (a weapon can roll multiple perks in
   the same column, so same-column combinations are included).
+- PvP specs (`pvp_weapons.json` / `cg_weapons_full.json`) list trait perks under
+  `columns`; a weapon may also carry optional `barrels` and `magazines` name
+  lists, which are resolved and emitted as optional prefix variants (with/without,
+  like the PvE resolver) so every roll still keeps at least one trait perk.
 - Origin Traits (PvE only, when the sheet lists one) are added as an optional
   prefix component alongside barrel/mag: each roll is generated with and without
   the origin trait, and once per resolved origin-trait hash when a name maps to
