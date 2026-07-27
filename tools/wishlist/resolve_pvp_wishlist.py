@@ -234,34 +234,8 @@ def roll_variants(barrel_hashes, magazine_hashes):
     return variants
 
 
-def column_perk_combos(columns, resolved):
-    """Column-aware combos grouped by ACTUAL trait socket, most-specific first.
-
-    Regroups the supported perks by the socket index they actually resolve to,
-    so no entry ever contains two perks from the same in-game column, regardless
-    of how the input spec grouped them.
-    """
-    import itertools
-    by_socket = {}
-    order = []
-    for col in columns:
-        for perk in col:
-            if perk not in resolved:
-                continue
-            socket_index = resolved[perk]["sockets"][0]
-            if socket_index not in by_socket:
-                by_socket[socket_index] = []
-                order.append(socket_index)
-            if perk not in by_socket[socket_index]:
-                by_socket[socket_index].append(perk)
-    groups = [by_socket[si] for si in sorted(order)]
-    for size in range(len(groups), 0, -1):
-        for chosen in itertools.combinations(range(len(groups)), size):
-            for pick in itertools.product(*(groups[i] for i in chosen)):
-                yield list(pick)
-
-
 def generate_weapon_block(result):
+    import itertools
     name = result["name"]
     columns = result["columns"]
     lines = []
@@ -315,20 +289,46 @@ def generate_weapon_block(result):
                 for m in supported_magazines
             ))
         lines.append("")
-        # Every non-empty subset of the recommended perks, most-perks-first, so
-        # DIM (first match wins) flags the fullest combination present. This
-        # matches the PvE "all combinations (individual and combined)" rule.
-        # Optional barrel/mag are added as prefix variants (with/without); every
-        # roll keeps at least one trait perk so no barrel/mag-only junk matches.
-        for size in range(len(supported), 0, -1):
-            for names in _combinations(supported, size):
-                for hash_list in perk_subset_hash_lists(names, resolved):
-                    for prefix in variants:
-                        combined = dedupe(list(prefix) + list(hash_list))
-                        lines.append(
-                            f"dimwishlist:item={cand['hash']}&perks=" + ",".join(map(str, combined))
-                        )
+        # Group the recommended trait perks by the ACTUAL manifest socket
+        # (column) they roll in, then require >= 1 perk from EACH column while
+        # still allowing multiple perks from the same column. This drops
+        # single-column-only rolls (e.g. a column-3 perk with an empty column
+        # 4). Barrel/mag stay optional prefix variants. Emitted most-perks-first
+        # so DIM (first match wins) flags the fullest combination present.
+        socket_order = []
+        perks_by_socket = {}
+        for p in supported:
+            si = resolved[p]["sockets"][0]
+            if si not in perks_by_socket:
+                perks_by_socket[si] = []
+                socket_order.append(si)
+            perks_by_socket[si].append(p)
+        perk_columns = [perks_by_socket[si] for si in sorted(socket_order)]
+
+        if not perk_columns:
             lines.append("")
+            continue
+
+        def nonempty_subsets(perks):
+            for size in range(len(perks), 0, -1):
+                for combo in _combinations(perks, size):
+                    yield list(combo)
+
+        per_column_subsets = [list(nonempty_subsets(col)) for col in perk_columns]
+        name_combos = [
+            [p for sub in chosen for p in sub]
+            for chosen in itertools.product(*per_column_subsets)
+        ]
+        name_combos.sort(key=lambda ns: -len(ns))
+
+        for names in name_combos:
+            for hash_list in perk_subset_hash_lists(names, resolved):
+                for prefix in variants:
+                    combined = dedupe(list(prefix) + list(hash_list))
+                    lines.append(
+                        f"dimwishlist:item={cand['hash']}&perks=" + ",".join(map(str, combined))
+                    )
+        lines.append("")
     return lines
 
 

@@ -73,12 +73,17 @@ any `resolve_*` script without `--generate` to only print a coverage report.
 - Every item/perk hash is validated against the manifest sockets before use;
   perks that don't roll on a version are dropped, and fixed-roll exotics match
   via their intrinsic. Resolution edge cases are printed as warnings.
-- Entries cover every non-empty perk subset (a weapon can roll multiple perks in
-  the same column, so same-column combinations are included).
+- PvE (Aegis) entries cover every non-empty perk subset (a weapon can roll
+  multiple perks in the same column, so same-column combinations are included).
+- PvP entries are tighter: each roll must include at least one perk from EACH
+  trait column (grouped by the perk's actual manifest socket, not the spec's
+  column layout), while still allowing multiple perks per column. Single-column-
+  only rolls are dropped.
 - PvP specs (`pvp_weapons.json` / `cg_weapons_full.json`) list trait perks under
   `columns`; a weapon may also carry optional `barrels` and `magazines` name
   lists, which are resolved and emitted as optional prefix variants (with/without,
-  like the PvE resolver) so every roll still keeps at least one trait perk.
+  like the PvE resolver). Barrel/mag stay optional even under the PvP
+  per-column rule.
 - Origin Traits (PvE only, when the sheet lists one) are added as an optional
   prefix component alongside barrel/mag: each roll is generated with and without
   the origin trait, and once per resolved origin-trait hash when a name maps to
