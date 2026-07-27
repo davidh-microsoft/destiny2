@@ -1,5 +1,5 @@
 {
-  "source": "r/CrucibleGuidebook recent recommendations (June-July 2026, post Monument of Triumph). Threads: final PvP meta, this is the final meta, Best hand cannons, best sniper, Top 10 primaries god rolls, Godroll guide/tierlist, Iron Banner god rolls, best weapons each type, Solemn Remembrance/Rose/Spare/Crimil's/Solemn Lie god roll threads, Null Composure, Messenger, best snipers, best fusions, fastest sidearm, submission, 1000 Yard Stare, Randy's Throwing Knife (Precision Instrument / Kinetic Tremors current-version rolls), Positive Outlook is incredible (Mega Kill Clip), Joxer's Longsword w/ Withering Gaze, Out of Bounds SMG (Rangefinder / DSR), Better Devils god roll threads (Perpetual Motion / Zen Moment / Slice), Forward Path vs Summoner (DSR / Tap the Trigger), Unending Tempest what to look for (Target Lock / max range), Gnawing Hunger to Sorrow's Verse (Zen Moment + Kill Clip / Target Lock). Only perks named by commenters are included; perks not in a weapon's manifest sockets are dropped automatically.",
+  "source": "r/CrucibleGuidebook recent recommendations (June-July 2026, post Monument of Triumph). Threads: final PvP meta, this is the final meta, Best hand cannons, best sniper, Top 10 primaries god rolls, Godroll guide/tierlist, Iron Banner god rolls, best weapons each type, Solemn Remembrance/Rose/Spare/Crimil's/Solemn Lie god roll threads, Null Composure, Messenger, best snipers, best fusions, fastest sidearm, submission, 1000 Yard Stare, Randy's Throwing Knife (Precision Instrument / Kinetic Tremors current-version rolls), Positive Outlook is incredible (Mega Kill Clip), Joxer's Longsword w/ Withering Gaze, Out of Bounds SMG (Rangefinder / DSR), Better Devils god roll threads (Perpetual Motion / Zen Moment / Slice), Forward Path vs Summoner (DSR / Tap the Trigger), Unending Tempest what to look for (Target Lock / max range), Gnawing Hunger to Sorrow's Verse (Zen Moment + Kill Clip / Target Lock), Frozen Orbit appreciation (Lone Wolf / Opening Shot / Snapshot). Only perks named by commenters are included; perks not in a weapon's manifest sockets are dropped automatically.",
   "weapons": [
     {"rank": 1, "name": "Rose", "columns": [["Slideshot", "Keep Away", "Rapid Hit", "Moving Target", "Precision Instrument", "Eye of the Storm", "Explosive Payload", "Opening Shot", "Rangefinder", "Magnificent Howl"]]},
     {"rank": 2, "name": "Solemn Remembrance", "columns": [["Zen Moment", "Lone Wolf", "Moving Target", "Slideshot", "Keep Away", "Eye of the Storm", "Precision Instrument", "Magnificent Howl", "Firefly"]]},
@@ -42,8 +42,9 @@
     {"rank": 39, "name": "The Forward Path", "columns": [["Dynamic Sway Reduction", "Zen Moment", "Slice"], ["Tap the Trigger", "Multikill Clip"]]},
     {"rank": 40, "name": "Unending Tempest", "columns": [["Dynamic Sway Reduction", "Moving Target", "Perpetual Motion"], ["Target Lock", "Tap the Trigger", "Rangefinder"]]},
     {"rank": 41, "name": "Sorrow's Verse", "columns": [["Zen Moment", "Tap the Trigger", "Dynamic Sway Reduction"], ["Kill Clip", "Target Lock", "Multikill Clip"]]},
-    {"rank": 42, "name": "MIDA Multi-Tool", "exotic": true, "random": false},
-    {"rank": 43, "name": "Cloudstrike", "exotic": true, "random": false},
-    {"rank": 44, "name": "Red Death Reformed", "exotic": true, "random": false}
+    {"rank": 42, "name": "Frozen Orbit", "columns": [["Lone Wolf", "Moving Target", "Surplus"], ["Opening Shot", "Snapshot Sights", "Closing Time"]]},
+    {"rank": 43, "name": "MIDA Multi-Tool", "exotic": true, "random": false},
+    {"rank": 44, "name": "Cloudstrike", "exotic": true, "random": false},
+    {"rank": 45, "name": "Red Death Reformed", "exotic": true, "random": false}
   ]
 }
