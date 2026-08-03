@@ -59,6 +59,13 @@ python reorder_sections.py                            # PvP sections above PvE
 This pipeline is idempotent (re-running reproduces the file byte-for-byte). Run
 any `resolve_*` script without `--generate` to only print a coverage report.
 
+> **Note:** the current `djsippycup-dim-wishlist.txt` is **PvP-only** — the PvE
+> (Aegis Tier S/A) section was removed on request. The tooling above still
+> generates it, so running `resolve_tier_s_wishlist.py --generate` re-adds the
+> Tier S section (then `add_notes.py` + `reorder_sections.py` place it after the
+> PvP sections). All PvP scripts and `reorder_sections.py` work whether or not
+> the Tier S section is present.
+
 ## Conventions
 
 - Section order: PvP (Daltnix, then CrucibleGuidebook) precedes PvE (the Aegis

@@ -6,10 +6,12 @@ to win when a weapon matches both a PvP and a PvE roll. Canonical order:
     title
     // BEGIN GENERATED PVP WEAPONS ... END              (Daltnix, PvP)
     // BEGIN GENERATED CRUCIBLEGUIDEBOOK PVP ... END     (CrucibleGuidebook, PvP)
-    // BEGIN GENERATED TIER S WEAPONS ... END            (PvE, incl. DECATUR 02)
+    // BEGIN GENERATED TIER S WEAPONS ... END            (PvE, optional)
 
 Whole sections are moved verbatim, so every //notes: line stays directly above
-its contiguous rolls and DIM parsing is unaffected. Idempotent.
+its contiguous rolls and DIM parsing is unaffected. Each section is optional
+(the PvE Tier S section may be absent); present sections keep the order above.
+Idempotent.
 """
 from pathlib import Path
 
@@ -24,12 +26,16 @@ def _find(lines, marker):
     for i, line in enumerate(lines):
         if line.startswith(marker):
             return i
-    raise SystemExit(f"marker not found: {marker}")
+    return None
 
 
 def _section(lines, markers):
     begin = _find(lines, markers[0])
     end = _find(lines, markers[1])
+    if begin is None and end is None:
+        return None
+    if begin is None or end is None:
+        raise SystemExit(f"incomplete section markers: {markers}")
     return begin, end, lines[begin : end + 1]
 
 
@@ -40,7 +46,10 @@ def main():
     marked = {0}
     sections = {}
     for markers in (PVP, CG, TIER_S):
-        begin, end, block = _section(lines, markers)
+        found = _section(lines, markers)
+        if found is None:
+            continue
+        begin, end, block = found
         sections[markers[0]] = block
         marked.update(range(begin, end + 1))
 
@@ -50,9 +59,9 @@ def main():
         raise SystemExit(f"{len(stray)} roll(s) outside marked sections: {stray[:2]}")
 
     out = [title, ""]
-    out += sections[PVP[0]] + [""]
-    out += sections[CG[0]] + [""]
-    out += sections[TIER_S[0]] + [""]
+    for markers in (PVP, CG, TIER_S):
+        if markers[0] in sections:
+            out += sections[markers[0]] + [""]
 
     REPO.write_text("\n".join(out).rstrip("\n") + "\n", encoding="utf-8")
     print("Reordered (PvP first) ->", REPO)
