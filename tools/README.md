@@ -17,6 +17,7 @@ tools/
     download_manifest.py    # fetches the current manifest from Bungie
     resolve_tier_s_wishlist.py   # PvE: Tier S + Tier A weapons from the Endgame Analysis sheet
     resolve_pvp_wishlist.py      # PvP: Daltnix video + r/CrucibleGuidebook
+    resolve_finnald_wishlist.py  # PvP: Finnald / Pride Eternal sheet (Weapon Database, Tier S/A/B)
     add_notes.py            # adds title + per-weapon //notes: source tags
     reorder_sections.py     # moves PvP sections above the PvE (Tier S) section
     pvp_weapons.json        # Daltnix weapon/perk spec
@@ -24,6 +25,7 @@ tools/
     data/
       google-sheets-destiny2/*.csv    # exported Endgame Analysis tabs (Tier S input)
       destiny2-endgame-analysis.xlsx  # workbook (name-cell light.gg hyperlinks)
+      finnald-pvp-sheet/weapon-database.csv  # exported Finnald PvP Weapon Database tab
 ```
 
 ## Manifest
@@ -52,6 +54,7 @@ python resolve_pvp_wishlist.py --generate \
     --report cg-full-resolution.json \
     --begin "// BEGIN GENERATED CRUCIBLEGUIDEBOOK PVP" \
     --end   "// END GENERATED CRUCIBLEGUIDEBOOK PVP"   # CrucibleGuidebook PvP section
+python resolve_finnald_wishlist.py --generate         # Finnald PvP section (Tier S/A/B)
 python add_notes.py                                   # title + //notes: source tags
 python reorder_sections.py                            # PvP sections above PvE
 ```
@@ -68,13 +71,13 @@ any `resolve_*` script without `--generate` to only print a coverage report.
 
 ## Conventions
 
-- Section order: PvP (Daltnix, then CrucibleGuidebook) precedes PvE (the Aegis
-  Tier S + Tier A weapons, which include DECATUR 02) so DIM matches PvP first.
+- Section order: PvP (Daltnix, then CrucibleGuidebook, then Finnald) precedes
+  PvE (the Aegis Tier S section) so DIM matches PvP first.
 - Sections are self-contained (no cross-section dedup). DIM dedups globally and
   keeps the first occurrence, so a roll shared by PvP and PvE is matched as PvP.
-- Notes carry the source and, for PvE, the sheet tier: `Aegis tags:pve#s`
-  (Tier S) or `Aegis tags:pve#a` (Tier A); PvP notes are `Daltnix tags:pvp` /
-  `CrucibleGuidebook tags:pvp`.
+- Notes carry the source and, where the source has tiers, a `#<tier>` suffix:
+  `Aegis tags:pve#s`/`#a` (PvE), `Daltnix tags:pvp` / `CrucibleGuidebook
+  tags:pvp`, and `Finnald tags:pvp#s`/`#a`/`#b` (Finnald PvP sheet).
 - Comments use `//`; rolls are ordered most-perks-first (DIM applies the first
   matching line).
 - Every item/perk hash is validated against the manifest sockets before use;
@@ -86,6 +89,15 @@ any `resolve_*` script without `--generate` to only print a coverage report.
   trait column (grouped by the perk's actual manifest socket, not the spec's
   column layout), while still allowing multiple perks per column. Single-column-
   only rolls are dropped.
+- The Finnald PvP source (`resolve_finnald_wishlist.py`, Weapon Database tab,
+  Tier S/A/B) parses the sheet's Barrel / Magazine / Column 1 / Column 2 /
+  Origin Trait cells. It emits **perks-only** rolls under the per-column rule:
+  barrel / magazine / origin are left genuinely optional (never gated), which
+  keeps the section usable (~87k rolls) instead of exploding on every
+  barrel×mag×origin combination. Weapon names, perks, barrels, mags and origins
+  are resolved against the manifest with loose/shorthand and alias matching;
+  reissue variants of the same weapon are merged (perks unioned, strongest tier
+  kept) and anything unresolved is dropped.
 - PvP specs (`pvp_weapons.json` / `cg_weapons_full.json`) list trait perks under
   `columns`; a weapon may also carry optional `barrels` and `magazines` name
   lists, which are resolved and emitted as optional prefix variants (with/without,

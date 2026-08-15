@@ -19,7 +19,10 @@ REPO = Path(__file__).resolve().parents[2] / "djsippycup-dim-wishlist.txt"
 
 PVP = ("// BEGIN GENERATED PVP WEAPONS", "// END GENERATED PVP WEAPONS")
 CG = ("// BEGIN GENERATED CRUCIBLEGUIDEBOOK PVP", "// END GENERATED CRUCIBLEGUIDEBOOK PVP")
+FINNALD = ("// BEGIN GENERATED FINNALD PVP", "// END GENERATED FINNALD PVP")
 TIER_S = ("// BEGIN GENERATED TIER S WEAPONS", "// END GENERATED TIER S WEAPONS")
+
+SECTION_ORDER = (PVP, CG, FINNALD, TIER_S)
 
 
 def _find(lines, marker):
@@ -45,7 +48,7 @@ def main():
 
     marked = {0}
     sections = {}
-    for markers in (PVP, CG, TIER_S):
+    for markers in SECTION_ORDER:
         found = _section(lines, markers)
         if found is None:
             continue
@@ -59,7 +62,7 @@ def main():
         raise SystemExit(f"{len(stray)} roll(s) outside marked sections: {stray[:2]}")
 
     out = [title, ""]
-    for markers in (PVP, CG, TIER_S):
+    for markers in SECTION_ORDER:
         if markers[0] in sections:
             out += sections[markers[0]] + [""]
 

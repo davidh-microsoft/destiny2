@@ -20,10 +20,20 @@ TITLE = "title:DJSippyCup - MoT (GHCP)"
 TIER_S_BEGIN = "// BEGIN GENERATED TIER S WEAPONS"
 PVP_BEGIN = "// BEGIN GENERATED PVP WEAPONS"
 CG_BEGIN = "// BEGIN GENERATED CRUCIBLEGUIDEBOOK PVP"
+FINNALD_BEGIN = "// BEGIN GENERATED FINNALD PVP"
 
 AEGIS = "Aegis tags:pve"
 DALTNIX = "Daltnix tags:pvp"
 CG = "CrucibleGuidebook tags:pvp"
+FINNALD = "Finnald tags:pvp"
+
+# Sections whose per-weapon "// tier:" lines append a #<tier> suffix to the note.
+SECTION_NOTES = {
+    TIER_S_BEGIN: AEGIS,
+    PVP_BEGIN: DALTNIX,
+    CG_BEGIN: CG,
+    FINNALD_BEGIN: FINNALD,
+}
 
 
 def main():
@@ -31,7 +41,8 @@ def main():
     lines = text.split("\n")
 
     out = [TITLE]
-    current_note = AEGIS  # DECATUR block before the first marker
+    section_base = AEGIS  # base note for the current section
+    current_note = AEGIS  # section_base, plus a #<tier> suffix when present
     pending = []          # accumulated dimwishlist lines for the current block
 
     def flush():
@@ -53,16 +64,16 @@ def main():
             continue
         # any non-roll, non-blank line (comments, markers, title/description)
         flush()
-        if line.startswith(TIER_S_BEGIN):
-            current_note = AEGIS
-        elif line.startswith(PVP_BEGIN):
-            current_note = DALTNIX
-        elif line.startswith(CG_BEGIN):
-            current_note = CG
+        matched_section = next(
+            (marker for marker in SECTION_NOTES if line.startswith(marker)), None
+        )
+        if matched_section:
+            section_base = SECTION_NOTES[matched_section]
+            current_note = section_base
         elif line.startswith("// tier:"):
-            # Aegis weapon tier (S/A) -> append #s / #a to the PvE note
+            # per-weapon tier (S/A/B) -> append #s / #a / #b to the section note
             tier = line.split(":", 1)[1].strip().lower()
-            current_note = f"{AEGIS}#{tier}"
+            current_note = f"{section_base}#{tier}"
         # skip an existing title line if present (we already added ours)
         if line.startswith("title:"):
             continue
