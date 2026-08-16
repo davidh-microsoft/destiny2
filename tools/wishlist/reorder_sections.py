@@ -4,6 +4,7 @@ DIM applies the first matching roll in file order, so PvP rolls must come first
 to win when a weapon matches both a PvP and a PvE roll. Canonical order:
 
     title
+    // BEGIN GENERATED FINNALD PVP ... END              (Finnald sheet, PvP)
     // BEGIN GENERATED PVP WEAPONS ... END              (Daltnix, PvP)
     // BEGIN GENERATED CRUCIBLEGUIDEBOOK PVP ... END     (CrucibleGuidebook, PvP)
     // BEGIN GENERATED TIER S WEAPONS ... END            (PvE, optional)
@@ -22,7 +23,7 @@ CG = ("// BEGIN GENERATED CRUCIBLEGUIDEBOOK PVP", "// END GENERATED CRUCIBLEGUID
 FINNALD = ("// BEGIN GENERATED FINNALD PVP", "// END GENERATED FINNALD PVP")
 TIER_S = ("// BEGIN GENERATED TIER S WEAPONS", "// END GENERATED TIER S WEAPONS")
 
-SECTION_ORDER = (PVP, CG, FINNALD, TIER_S)
+SECTION_ORDER = (FINNALD, PVP, CG, TIER_S)
 
 
 def _find(lines, marker):

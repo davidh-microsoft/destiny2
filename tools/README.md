@@ -71,7 +71,7 @@ any `resolve_*` script without `--generate` to only print a coverage report.
 
 ## Conventions
 
-- Section order: PvP (Daltnix, then CrucibleGuidebook, then Finnald) precedes
+- Section order: PvP (Finnald, then Daltnix, then CrucibleGuidebook) precedes
   PvE (the Aegis Tier S section) so DIM matches PvP first.
 - Sections are self-contained (no cross-section dedup). DIM dedups globally and
   keeps the first occurrence, so a roll shared by PvP and PvE is matched as PvP.
