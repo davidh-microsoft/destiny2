@@ -18,8 +18,9 @@ tools/
     resolve_tier_s_wishlist.py   # PvE: Tier S + Tier A weapons from the Endgame Analysis sheet
     resolve_pvp_wishlist.py      # PvP: Daltnix video + r/CrucibleGuidebook
     resolve_finnald_wishlist.py  # PvP: Finnald / Pride Eternal sheet (Weapon Database, Tier S/A)
-    add_notes.py            # adds title + per-weapon //notes: source tags
-    reorder_sections.py     # moves PvP sections above the PvE (Tier S) section
+    build_wishlist.py       # assembles the final file: interleaves the PvP sources per weapon
+    add_notes.py            # (legacy) title + per-weapon //notes: for the separate-section layout
+    reorder_sections.py     # (legacy) orders the separate marked sections PvP-first
     pvp_weapons.json        # Daltnix weapon/perk spec
     cg_weapons_full.json    # r/CrucibleGuidebook weapon/perk spec
     data/
@@ -40,47 +41,43 @@ python tools/wishlist/download_manifest.py   # rewrites manifest.content
 
 ## Regenerating the wishlist
 
-Run from `tools/wishlist/`. Each `resolve_*` script rewrites only its own marked
-section in place (preserving the other sections), so they can be run in any
-order. `add_notes.py` then applies the title and notes, and
-`reorder_sections.py` puts the PvP sections first. Full rebuild:
+Run from `tools/wishlist/`. `build_wishlist.py` is the assembler: it resolves
+all three PvP sources in memory and writes the final `djsippycup-dim-wishlist.txt`
+as a single **interleaved** section (see Conventions). Full rebuild:
 
 ```
 cd tools/wishlist
-python resolve_tier_s_wishlist.py --generate          # PvE (Aegis) section, incl. DECATUR 02
-python resolve_pvp_wishlist.py --generate             # Daltnix PvP section
-python resolve_pvp_wishlist.py --generate \
-    --weapons cg_weapons_full.json \
-    --report cg-full-resolution.json \
-    --begin "// BEGIN GENERATED CRUCIBLEGUIDEBOOK PVP" \
-    --end   "// END GENERATED CRUCIBLEGUIDEBOOK PVP"   # CrucibleGuidebook PvP section
-python resolve_finnald_wishlist.py --generate         # Finnald PvP section (Tier S/A)
-python add_notes.py                                   # title + //notes: source tags
-python reorder_sections.py                            # PvP sections above PvE
+python build_wishlist.py
 ```
 
-This pipeline is idempotent (re-running reproduces the file byte-for-byte). Run
-any `resolve_*` script without `--generate` to only print a coverage report.
+This is idempotent (re-running reproduces the file byte-for-byte) and reads the
+three source specs directly (`data/finnald-pvp-sheet/weapon-database.csv`,
+`pvp_weapons.json`, `cg_weapons_full.json`). Run any `resolve_*` script without
+`--generate` to print just that source's coverage report.
 
-> **Note:** the current `djsippycup-dim-wishlist.txt` is **PvP-only** — the PvE
-> (Aegis Tier S/A) section was removed on request. The tooling above still
-> generates it, so running `resolve_tier_s_wishlist.py --generate` re-adds the
-> Tier S section (then `add_notes.py` + `reorder_sections.py` place it after the
-> PvP sections). All PvP scripts and `reorder_sections.py` work whether or not
-> the Tier S section is present.
+> **Legacy separate-section layout:** each `resolve_*_wishlist.py --generate`
+> still rewrites its own marked section in place, and `add_notes.py` +
+> `reorder_sections.py` produce the older layout with one section per source
+> (and an optional PvE Tier S section). Do **not** mix these with
+> `build_wishlist.py` output — `build_wishlist.py` emits a single
+> `// … PVP INTERLEAVED` section and is the canonical build. The PvE
+> (`resolve_tier_s_wishlist.py`) source is retained but not currently included.
 
 ## Conventions
 
-- Section order: PvP (Finnald, then Daltnix, then CrucibleGuidebook) precedes
-  PvE (the Aegis Tier S section) so DIM matches PvP first.
-- Sections are self-contained (no cross-section dedup). DIM dedups globally and
-  keeps the first occurrence, so a roll shared by PvP and PvE is matched as PvP.
-- Notes carry the source and, where the source has tiers, a `#<tier>` suffix:
-  `Aegis tags:pve#s`/`#a` (PvE), `Daltnix tags:pvp` / `CrucibleGuidebook
-  tags:pvp`, and `Finnald: <role/notes> tags:pvp#s`/`#a` (Finnald PvP sheet;
-  the sheet's Role / Notes text is included before the trailing `tags:`).
-- Comments use `//`; rolls are ordered most-perks-first (DIM applies the first
-  matching line).
+- Layout: `build_wishlist.py` emits one interleaved section. Each weapon appears
+  once; its rolls from all three PvP sources are merged, deduped by
+  `(itemHash, sorted perks)`, and ordered by how many components they specify
+  (barrels + magazines + perks), fullest first — DIM applies the first matching
+  roll, so the most complete recommendation an item satisfies wins. Weapons are
+  ordered by tier (S, A, then untiered) then name.
+- Each weapon block has a single `//notes:` line that combines the sources it
+  came from and keeps the Finnald Role/Notes text and tier tag, e.g.
+  `Finnald + CrucibleGuidebook: <role/notes> tags:pvp#s`. DIM captures a block
+  note up to the first `|` and has no structured tag parsing, so `tags:pvp#<tier>`
+  is kept last (the Role/Notes text has `|`/`tags:` sanitized).
+- Comments use `//`; rolls are ordered most-components-first (DIM applies the
+  first matching line).
 - Every item/perk hash is validated against the manifest sockets before use;
   perks that don't roll on a version are dropped, and fixed-roll exotics match
   via their intrinsic. Resolution edge cases are printed as warnings.
