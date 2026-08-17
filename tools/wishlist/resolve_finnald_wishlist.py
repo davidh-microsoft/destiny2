@@ -46,7 +46,7 @@ REPO_WISHLIST = REPO_ROOT / "djsippycup-dim-wishlist.txt"
 BEGIN = "// BEGIN GENERATED FINNALD PVP"
 END = "// END GENERATED FINNALD PVP"
 
-TIERS = ("S", "A", "B")
+TIERS = ("S", "A")
 TIER_RANK = {"S": 0, "A": 1, "B": 2}
 
 # Socket kinds (itemTypeDisplayName) that are never a barrel/mag-equivalent slot.
@@ -89,6 +89,20 @@ def split_cell(value: str) -> list[str]:
     return [line.strip() for line in value.splitlines() if line.strip()]
 
 
+def sanitize_note(value: str) -> str:
+    """Flatten a sheet cell into a single-line DIM note fragment.
+
+    DIM captures a block note up to the first ``|`` (``[^|]*``), so pipes are
+    replaced and all whitespace/newlines are collapsed to single spaces. A
+    literal ``tags:`` is defanged so it can't be mistaken for the trailing tag
+    delimiter used by our tooling.
+    """
+    text = " ".join(value.split())
+    text = text.replace("|", "/")
+    text = re.sub(r"(?i)tags:", "tags ", text)
+    return text.strip()
+
+
 # --------------------------------------------------------------------------- #
 # Sheet reading
 # --------------------------------------------------------------------------- #
@@ -118,6 +132,7 @@ def read_sheet_weapons():
                 "name": base,
                 "type": cell(row, "Type").replace("\n", " "),
                 "tier": tier,
+                "role": sanitize_note(cell(row, "Role / Notes")),
                 "barrels": [],
                 "magazines": [],
                 "perks_1": [],
@@ -128,6 +143,8 @@ def read_sheet_weapons():
         weapon = merged[key]
         if TIER_RANK[tier] < TIER_RANK[weapon["tier"]]:
             weapon["tier"] = tier
+        if not weapon["role"]:
+            weapon["role"] = sanitize_note(cell(row, "Role / Notes"))
         weapon["barrels"] += split_cell(cell(row, "Barrel"))
         weapon["magazines"] += split_cell(cell(row, "Magazine"))
         weapon["perks_1"] += split_cell(cell(row, "Column 1"))
@@ -255,6 +272,13 @@ def resolve_perk(token, trait_sockets):
     return match_exact(token, trait_sockets) or match_loose(token, trait_sockets)
 
 
+def resolve_component(token, socket):
+    """Resolve a barrel/magazine shorthand to plug hashes in one socket."""
+    if socket is None:
+        return []
+    return [plug_hash for _, plug_hash in match_loose(token, [socket])]
+
+
 def resolve_weapon(weapon, items, items_by_name, plug_sets, loose_index):
     candidates = find_candidates(weapon["name"], items_by_name, loose_index)
     if not candidates:
@@ -262,7 +286,9 @@ def resolve_weapon(weapon, items, items_by_name, plug_sets, loose_index):
 
     resolved_candidates = []
     for candidate in candidates:
-        traits = socket_layout(candidate, items, plug_sets)[0]
+        traits, barrel_socket, magazine_socket, _origins = socket_layout(
+            candidate, items, plug_sets
+        )
         perk_hashes = {}
         socket_of = {}
         for perk in weapon["perks"]:
@@ -270,6 +296,12 @@ def resolve_weapon(weapon, items, items_by_name, plug_sets, loose_index):
             if hits:
                 perk_hashes[perk] = dedupe(h for _, h in hits)
                 socket_of[perk] = hits[0][0]
+        barrels = dedupe(
+            h for b in weapon["barrels"] for h in resolve_component(b, barrel_socket)
+        )
+        magazines = dedupe(
+            h for m in weapon["magazines"] for h in resolve_component(m, magazine_socket)
+        )
         resolved_candidates.append(
             {
                 "hash": candidate["hash"],
@@ -277,6 +309,8 @@ def resolve_weapon(weapon, items, items_by_name, plug_sets, loose_index):
                 "coverage": len(perk_hashes),
                 "perk_hashes": perk_hashes,
                 "socket_of": socket_of,
+                "barrels": barrels,
+                "magazines": magazines,
             }
         )
 
@@ -293,6 +327,24 @@ def resolve_weapon(weapon, items, items_by_name, plug_sets, loose_index):
 def nonempty_subsets(values):
     for size in range(len(values), 0, -1):
         yield from itertools.combinations(values, size)
+
+
+def prefix_variants(barrels, magazines):
+    """Optional barrel/mag prefixes: pick at most one from each group.
+
+    Yields every (barrel?, magazine?) combination including neither, most
+    components first, so DIM highlights the fullest recommended roll present.
+    """
+    groups = [[None] + list(barrels), [None] + list(magazines)]
+    seen = set()
+    variants = []
+    for combo in itertools.product(*groups):
+        chosen = tuple(c for c in combo if c is not None)
+        if chosen not in seen:
+            seen.add(chosen)
+            variants.append(list(chosen))
+    variants.sort(key=lambda v: -len(v))
+    return variants
 
 
 def candidate_block(weapon, candidate, position):
@@ -313,11 +365,16 @@ def candidate_block(weapon, candidate, position):
         "// perks: "
         + "; ".join(f"{p}={'|'.join(map(str, perk_hashes[p]))}" for p in supported)
     )
+    if candidate["barrels"]:
+        lines.append("// barrels: " + ",".join(map(str, candidate["barrels"])))
+    if candidate["magazines"]:
+        lines.append("// magazines: " + ",".join(map(str, candidate["magazines"])))
     lines.append("")
 
-    # Perks only: a perks-only roll matches the weapon regardless of which
-    # barrel / magazine / origin it rolled, so those stay genuinely optional
-    # (they are never gated) without exploding the file with every combination.
+    # Barrel/magazine are optional prefix variants (with/without); every roll
+    # still keeps >= 1 perk from each trait column. Origin is intentionally left
+    # off (never gated).
+    variants = prefix_variants(candidate["barrels"], candidate["magazines"])
     name_combos = [
         [perk for subset in chosen for perk in subset]
         for chosen in itertools.product(
@@ -328,11 +385,12 @@ def candidate_block(weapon, candidate, position):
 
     for names in name_combos:
         for hash_choice in itertools.product(*[perk_hashes[n] for n in names]):
-            combined = dedupe(list(hash_choice))
-            yield lines, (
-                f"dimwishlist:item={item_hash}&perks="
-                + ",".join(map(str, combined))
-            )
+            for prefix in variants:
+                combined = dedupe(list(prefix) + list(hash_choice))
+                yield lines, (
+                    f"dimwishlist:item={item_hash}&perks="
+                    + ",".join(map(str, combined))
+                )
     return
 
 
@@ -341,6 +399,8 @@ def generate_weapon_lines(weapon):
         f"// {weapon['type']}: {weapon['name']} [Tier {weapon['tier']}]",
         f"// tier: {weapon['tier']}",
     ]
+    if weapon.get("role"):
+        header.append(f"// role: {weapon['role']}")
     blocks = []
     for position, candidate in enumerate(weapon["selected"]):
         block_lines = None
@@ -374,8 +434,9 @@ def generate_wishlist(weapons):
 
     seen_rolls = set()
     section = [BEGIN, "// Source: Finnald / Pride Eternal Destiny 2 PvP Spreadsheet "
-               "(Weapon Database tab, Tier S/A/B). Perks/barrels/mags/origins "
-               "resolved to the current manifest; unavailable ones dropped.", ""]
+               "(Weapon Database tab, Tier S/A). Perks + optional barrel/mag "
+               "variants resolved to the current manifest; unavailable ones "
+               "dropped. Origin traits are not gated.", ""]
     block_count = 0
     for weapon in weapons:
         if not weapon["selected"]:

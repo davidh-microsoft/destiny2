@@ -4,13 +4,21 @@ DIM resets block notes on every blank line and every // comment, and checks
 //notes: before the reset. So each weapon-version block is rewritten as:
 
     // <existing header comment(s)>
-    //notes: <source> tags:<tag>
+    //notes: <source>[: <role/notes>] tags:<mode>[#<tier>]
     dimwishlist:...            (all rolls for this block, contiguous, no blanks)
 
-with a single blank line between blocks. Notes are chosen by section:
-  - TIER S section (incl. DECATUR 02) -> "Aegis tags:pve"
-  - PVP WEAPONS section (Daltnix)     -> "Daltnix tags:pvp"
-  - CRUCIBLEGUIDEBOOK section          -> "CrucibleGuidebook tags:pvp"
+with a single blank line between blocks. The note is composed from:
+  - the section source/mode:
+      TIER S section    -> ("Aegis", "pve")
+      PVP WEAPONS       -> ("Daltnix", "pvp")
+      CRUCIBLEGUIDEBOOK -> ("CrucibleGuidebook", "pvp")
+      FINNALD PVP       -> ("Finnald", "pvp")
+  - an optional per-weapon "// tier:" line -> "#s"/"#a"/"#b" tag suffix
+  - an optional per-weapon "// role:" line -> free-text note (Finnald), inserted
+    before the trailing "tags:" delimiter.
+
+DIM captures a block note up to the first "|" and stores the whole string, so
+the "tags:" portion is kept last (our tooling reads the tag after "tags:").
 """
 from pathlib import Path
 
@@ -22,18 +30,25 @@ PVP_BEGIN = "// BEGIN GENERATED PVP WEAPONS"
 CG_BEGIN = "// BEGIN GENERATED CRUCIBLEGUIDEBOOK PVP"
 FINNALD_BEGIN = "// BEGIN GENERATED FINNALD PVP"
 
-AEGIS = "Aegis tags:pve"
-DALTNIX = "Daltnix tags:pvp"
-CG = "CrucibleGuidebook tags:pvp"
-FINNALD = "Finnald tags:pvp"
-
-# Sections whose per-weapon "// tier:" lines append a #<tier> suffix to the note.
-SECTION_NOTES = {
-    TIER_S_BEGIN: AEGIS,
-    PVP_BEGIN: DALTNIX,
-    CG_BEGIN: CG,
-    FINNALD_BEGIN: FINNALD,
+# marker -> (source label, mode). Mode becomes the "tags:<mode>" value.
+SECTION_META = {
+    TIER_S_BEGIN: ("Aegis", "pve"),
+    PVP_BEGIN: ("Daltnix", "pvp"),
+    CG_BEGIN: ("CrucibleGuidebook", "pvp"),
+    FINNALD_BEGIN: ("Finnald", "pvp"),
 }
+
+DEFAULT_META = ("Aegis", "pve")  # for a DECATUR-style block before any marker
+
+
+def compose_note(source, mode, tier, role):
+    note = source
+    if role:
+        note += f": {role}"
+    note += f" tags:{mode}"
+    if tier:
+        note += f"#{tier}"
+    return note
 
 
 def main():
@@ -41,13 +56,14 @@ def main():
     lines = text.split("\n")
 
     out = [TITLE]
-    section_base = AEGIS  # base note for the current section
-    current_note = AEGIS  # section_base, plus a #<tier> suffix when present
-    pending = []          # accumulated dimwishlist lines for the current block
+    source, mode = DEFAULT_META
+    tier = None
+    role = None
+    pending = []  # accumulated dimwishlist lines for the current block
 
     def flush():
         if pending:
-            out.append(f"//notes: {current_note}")
+            out.append(f"//notes: {compose_note(source, mode, tier, role)}")
             out.extend(pending)
             out.append("")
             pending.clear()
@@ -65,15 +81,21 @@ def main():
         # any non-roll, non-blank line (comments, markers, title/description)
         flush()
         matched_section = next(
-            (marker for marker in SECTION_NOTES if line.startswith(marker)), None
+            (marker for marker in SECTION_META if line.startswith(marker)), None
         )
         if matched_section:
-            section_base = SECTION_NOTES[matched_section]
-            current_note = section_base
+            source, mode = SECTION_META[matched_section]
+            tier = None
+            role = None
         elif line.startswith("// tier:"):
-            # per-weapon tier (S/A/B) -> append #s / #a / #b to the section note
-            tier = line.split(":", 1)[1].strip().lower()
-            current_note = f"{section_base}#{tier}"
+            # "// tier:" marks a new weapon block; reset the per-weapon role so it
+            # never leaks to a later weapon, then set this weapon's tier. Both
+            # persist across the weapon's alternate-version sub-blocks (which have
+            # no "// tier:" line of their own).
+            tier = line.split(":", 1)[1].strip().lower() or None
+            role = None
+        elif line.startswith("// role:"):
+            role = line.split(":", 1)[1].strip() or None
         # skip an existing title line if present (we already added ours)
         if line.startswith("title:"):
             continue

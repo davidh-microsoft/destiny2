@@ -17,7 +17,7 @@ tools/
     download_manifest.py    # fetches the current manifest from Bungie
     resolve_tier_s_wishlist.py   # PvE: Tier S + Tier A weapons from the Endgame Analysis sheet
     resolve_pvp_wishlist.py      # PvP: Daltnix video + r/CrucibleGuidebook
-    resolve_finnald_wishlist.py  # PvP: Finnald / Pride Eternal sheet (Weapon Database, Tier S/A/B)
+    resolve_finnald_wishlist.py  # PvP: Finnald / Pride Eternal sheet (Weapon Database, Tier S/A)
     add_notes.py            # adds title + per-weapon //notes: source tags
     reorder_sections.py     # moves PvP sections above the PvE (Tier S) section
     pvp_weapons.json        # Daltnix weapon/perk spec
@@ -54,7 +54,7 @@ python resolve_pvp_wishlist.py --generate \
     --report cg-full-resolution.json \
     --begin "// BEGIN GENERATED CRUCIBLEGUIDEBOOK PVP" \
     --end   "// END GENERATED CRUCIBLEGUIDEBOOK PVP"   # CrucibleGuidebook PvP section
-python resolve_finnald_wishlist.py --generate         # Finnald PvP section (Tier S/A/B)
+python resolve_finnald_wishlist.py --generate         # Finnald PvP section (Tier S/A)
 python add_notes.py                                   # title + //notes: source tags
 python reorder_sections.py                            # PvP sections above PvE
 ```
@@ -77,7 +77,8 @@ any `resolve_*` script without `--generate` to only print a coverage report.
   keeps the first occurrence, so a roll shared by PvP and PvE is matched as PvP.
 - Notes carry the source and, where the source has tiers, a `#<tier>` suffix:
   `Aegis tags:pve#s`/`#a` (PvE), `Daltnix tags:pvp` / `CrucibleGuidebook
-  tags:pvp`, and `Finnald tags:pvp#s`/`#a`/`#b` (Finnald PvP sheet).
+  tags:pvp`, and `Finnald: <role/notes> tags:pvp#s`/`#a` (Finnald PvP sheet;
+  the sheet's Role / Notes text is included before the trailing `tags:`).
 - Comments use `//`; rolls are ordered most-perks-first (DIM applies the first
   matching line).
 - Every item/perk hash is validated against the manifest sockets before use;
@@ -90,14 +91,15 @@ any `resolve_*` script without `--generate` to only print a coverage report.
   column layout), while still allowing multiple perks per column. Single-column-
   only rolls are dropped.
 - The Finnald PvP source (`resolve_finnald_wishlist.py`, Weapon Database tab,
-  Tier S/A/B) parses the sheet's Barrel / Magazine / Column 1 / Column 2 /
-  Origin Trait cells. It emits **perks-only** rolls under the per-column rule:
-  barrel / magazine / origin are left genuinely optional (never gated), which
-  keeps the section usable (~87k rolls) instead of exploding on every
-  barrel×mag×origin combination. Weapon names, perks, barrels, mags and origins
-  are resolved against the manifest with loose/shorthand and alias matching;
-  reissue variants of the same weapon are merged (perks unioned, strongest tier
-  kept) and anything unresolved is dropped.
+  Tier S/A) parses the sheet's Barrel / Magazine / Column 1 / Column 2 / Role /
+  Notes cells. Rolls follow the per-column rule and add **optional barrel/mag
+  prefix variants** (at most one barrel + one mag, with/without), so barrel/mag
+  are recommended but never required. This is large by design (~1M rolls /
+  ~100 MB). The sheet's Role / Notes text becomes each weapon's note. Weapon
+  names, perks, barrels and mags are resolved against the manifest with
+  loose/shorthand and alias matching; reissue variants of the same weapon are
+  merged (perks unioned, strongest tier kept) and anything unresolved is
+  dropped. Origin traits are not gated.
 - PvP specs (`pvp_weapons.json` / `cg_weapons_full.json`) list trait perks under
   `columns`; a weapon may also carry optional `barrels` and `magazines` name
   lists, which are resolved and emitted as optional prefix variants (with/without,
